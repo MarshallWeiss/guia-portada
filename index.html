@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía portada 2026</title>
+<style>
+  :root {
+    --text: #37352f;
+    --text-secondary: #787774;
+    --bg: #ffffff;
+    --bg-gray: #f7f6f3;
+    --bg-yellow: #fbf3db;
+    --bg-blue: #ddebf1;
+    --border: #e9e9e7;
+    --accent: #2eaadc;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+  .page { max-width: 900px; margin: 0 auto; padding: 40px 60px 80px; }
+  h1 { font-size: 40px; font-weight: 700; margin-bottom: 8px; }
+  h2 { font-size: 24px; font-weight: 600; margin: 40px 0 12px; }
+  h3 { font-size: 20px; font-weight: 600; margin: 32px 0 8px; }
+  h4 { font-size: 15px; font-weight: 600; margin: 16px 0 8px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+  p { margin: 8px 0; }
+  blockquote { border-left: 3px solid #e9e9e7; padding: 4px 14px; color: var(--text-secondary); margin: 12px 0; font-style: italic; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+  a { color: var(--text); text-decoration: underline; text-decoration-color: var(--text-secondary); }
+  a:hover { text-decoration-color: var(--text); }
+
+  .callout { display: flex; gap: 12px; padding: 16px; border-radius: 4px; margin: 16px 0; }
+  .callout-yellow { background: var(--bg-yellow); }
+  .callout-gray { background: var(--bg-gray); }
+  .callout-icon { font-size: 20px; flex-shrink: 0; }
+  .callout-content { flex: 1; }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  th, td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; vertical-align: top; }
+  th { background: var(--bg-gray); font-weight: 600; }
+
+  .screenshots { display: grid; grid-template-columns: 3fr 2fr 1fr; gap: 12px; margin: 16px 0; }
+  .screenshots img { width: 100%; border: 1px solid var(--border); border-radius: 4px; background: #fafafa; padding: 8px; }
+  .screenshots .label, .caratulas .label { font-size: 12px; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; margin-bottom: 4px; }
+
+  .caratulas { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 12px; margin: 12px 0 16px; align-items: start; }
+  .caratulas img { width: 100%; border: 1px solid var(--border); border-radius: 4px; }
+
+  details { margin: 8px 0; }
+  summary { cursor: pointer; font-size: 20px; font-weight: 600; margin: 24px 0 8px; padding: 4px 0; }
+  summary:hover { background: var(--bg-gray); border-radius: 4px; }
+  details > div { padding-left: 24px; }
+
+  .placeholder { background: var(--bg-gray); border: 2px dashed var(--border); border-radius: 4px; padding: 40px; text-align: center; color: var(--text-secondary); font-size: 12px; min-height: 80px; display: flex; align-items: center; justify-content: center; }
+
+  .sidebar { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--bg-gray); padding: 20px 12px; overflow-y: auto; font-size: 14px; }
+  .sidebar a { display: block; padding: 6px 12px; border-radius: 4px; text-decoration: none; color: var(--text-secondary); transition: background 0.1s, color 0.1s; }
+  .sidebar a:hover { background: #e8e7e4; color: var(--text); }
+  .sidebar a.active { background: #37352f; color: #ffffff; font-weight: 600; }
+  .sidebar .title { font-weight: 600; color: var(--text); padding: 4px 12px; margin-bottom: 8px; }
+  .content-area { margin-left: 240px; }
+  /* Password gate */
+  #auth-gate {
+    position: fixed; inset: 0; z-index: 9999;
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  #auth-gate h1 { font-size: 24px; font-weight: 700; color: #37352f; }
+  #auth-gate p { font-size: 14px; color: #787774; }
+  #auth-gate input {
+    padding: 10px 16px; font-size: 16px; border: 1px solid #e9e9e7;
+    border-radius: 6px; width: 260px; text-align: center; outline: none;
+  }
+  #auth-gate input:focus { border-color: #37352f; }
+  #auth-gate button {
+    padding: 10px 32px; font-size: 14px; font-weight: 600;
+    background: #37352f; color: #fff; border: none; border-radius: 6px; cursor: pointer;
+  }
+  #auth-gate button:hover { background: #1a1a1a; }
+  #auth-gate .error { color: #e03e3e; font-size: 13px; min-height: 20px; }
+  .locked { overflow: hidden !important; }
+</style>
+</head>
+<body class="locked">
+
+<div id="auth-gate">
+  <h1>Guia portada 2026</h1>
+  <p>Introduce la contraseña para acceder</p>
+  <input type="password" id="auth-input" placeholder="Contraseña" autofocus>
+  <button id="auth-btn">Entrar</button>
+  <div class="error" id="auth-error"></div>
+</div>
+
+<script>
+(function() {
+  var PASS = 'portada2026';
+  var gate = document.getElementById('auth-gate');
+  var input = document.getElementById('auth-input');
+  var btn = document.getElementById('auth-btn');
+  var err = document.getElementById('auth-error');
+
+  if (sessionStorage.getItem('guia-auth') === 'ok') {
+    gate.remove();
+    document.body.classList.remove('locked');
+  }
+
+  function tryAuth() {
+    if (input.value === PASS) {
+      sessionStorage.setItem('guia-auth', 'ok');
+      gate.remove();
+      document.body.classList.remove('locked');
+    } else {
+      err.textContent = 'Contraseña incorrecta';
+      input.value = '';
+      input.focus();
+    }
+  }
+
+  btn.addEventListener('click', tryAuth);
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') tryAuth();
+  });
+})();
+</script>
+
+<nav class="sidebar">
+  <div class="title">Guia portada 2026</div>
+  <a href="#b1">B1 - Apertura principal</a>
+  <a href="#b2">B2 - Enfoques y analisis</a>
+  <a href="#b3">B3 - Opinion / Eventos / Nichos</a>
+  <a href="#b4">B4 - El Corecito</a>
+  <a href="#issues">Issues (B5-B9)</a>
+  <a href="#mejor">Lo mejor de EC</a>
+  <a href="#carrusel">Carrousel Video</a>
+  <a href="#lo-mas-viral">Lo mas viral</a>
+  <a href="#branded">Branded</a>
+  <a href="#secciones-dest">Secciones destacadas</a>
+  <a href="#seleccion">Nuestra seleccion</a>
+  <a href="#suscriptor">Espacio del suscriptor</a>
+  <a href="#secciones-sec">Secciones secundarias</a>
+  <a href="#favoritos-suscriptor">Favoritos del suscriptor</a>
+  <a href="#vanitatis">Vanitatis</a>
+  <a href="#tele">Televisi&oacute;n</a>
+  <a href="#compras">De compras</a>
+  <a href="#opinion">Opinion</a>
+</nav>
+
+<div class="content-area">
+
+<!-- ========== B1 ========== -->
+<div class="page" id="b1">
+<h1>B1 - Apertura principal</h1>
+<blockquote>Espacio de maxima relevancia informativa de la portada. La seleccion de template es una decision editorial basada en la importancia del tema, la carga visual disponible y la agenda del dia.</blockquote>
+<hr>
+<h2>Combinaciones posibles</h2>
+<p>Cinco templates disponibles. Las default (A y B) son el formato base del dia a dia, sin apoyos. Bandera, pared a pared y alta carga grafica incorporan apoyos del mismo tema y se reservan para coberturas que lo justifiquen editorialmente.</p>
+<hr>
+
+<details open>
+<summary>Template A - Default con foto cuadrada (1:1)</summary>
+<div>
+  <p><strong>Cuando se usa:</strong> formato base diario. Dos variantes segun el contenido:</p>
+  <ul><li><em>Monotematica:</em> todo el bloque pertenece al mismo tema (1 pieza).</li><li><em>Multitopic:</em> la columna derecha aborda un tema independiente (2 piezas).</li></ul>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b1_template_a_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b1_template_a_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b1_template_a_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE - confirmar con equipo]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/b1_template_a_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b1_template_a_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/b1_template_a_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+  <table><tr><th>Apoyos</th><th>Foto</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>No</td><td>Cuadrada (1:1)</td><td>1</td><td>2</td></tr></table>
+</div>
+</details><hr>
+
+<details>
+<summary>Template B - Default con foto vertical (2:3)</summary>
+<div>
+  <p><strong>Cuando se usa:</strong> mismo layout que A pero cuando la fotografia vertical contribuye narrativamente a la noticia.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b1_template_b_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b1_template_b_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b1_template_b_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/b1_template_b_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b1_template_b_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/b1_template_b_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+  <table><tr><th>Apoyos</th><th>Foto</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>No</td><td>Vertical (2:3)</td><td>1</td><td>2</td></tr></table>
+  <div class="callout callout-yellow"><div class="callout-icon">&#9888;&#65039;</div><div class="callout-content"><strong>Nota de producto.</strong> El formato vertical en movil ocupa un porcentaje elevado de la pantalla y puede reducir el CTR.</div></div>
+</div>
+</details><hr>
+
+<details>
+<summary>Template C - Bandera</summary>
+<div>
+  <p><strong>Cuando se usa:</strong> <strong>[PENDIENTE]</strong></p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b1_template_c_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b1_template_c_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b1_template_c_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/b1_template_c_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b1_template_c_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">b1_template_c_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Template C - Bandera con apoyos</summary>
+<div>
+  <p><strong>Cuando se usa:</strong> <strong>[PENDIENTE]</strong></p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b1_template_c_apoyos_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b1_template_c_apoyos_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b1_template_c_apoyos_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/b1_template_c_apoyos_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b1_template_c_apoyos_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">b1_template_c_apoyos_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Template D - Pared a pared</summary>
+<div>
+  <p><strong>Cuando se usa:</strong> <strong>[PENDIENTE]</strong>. Unica apertura que puede apilarse por encima del flujo natural.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b1_template_d_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b1_template_d_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b1_template_d_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/b1_template_d_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b1_template_d_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">b1_template_d_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Template E - Alta carga grafica</summary>
+<div>
+  <p><strong>Cuando se usa:</strong> <strong>[PENDIENTE]</strong></p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b1_template_e_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b1_template_e_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b1_template_e_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/b1_template_e_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b1_template_e_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/b1_template_e_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details>
+
+<hr>
+<h2>Acuerdos</h2>
+<ul>
+  <li><strong>Default monotematica y multitopic comparten layout.</strong></li>
+  <li><strong>Default dispone de dos variantes visuales</strong> segun el ratio de imagen: cuadrada (1:1) o vertical (2:3).</li>
+  <li><strong>Bandera, pared a pared y alta carga grafica incorporan apoyos</strong>, siempre del mismo tema que la apertura.</li>
+  <li><strong>Las default no incorporan apoyos.</strong></li>
+  <li><strong>La portada crece hacia abajo, nunca hacia arriba.</strong> Pared a pared es la unica excepcion.</li>
+</ul>
+</div>
+
+<!-- ========== B2 ========== -->
+<div class="page" id="b2">
+<h1>B2 - Enfoques y analisis</h1>
+<blockquote>Espacio que otorga visibilidad a contenido diferencial: analisis, enfoques y video. En momentos de gran cobertura informativa, funciona como apoyo directo a la apertura.</blockquote>
+<hr><h2>Casos de uso</h2>
+
+<details>
+<summary>A - Version vertical</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b2_a_vertical_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b2_a_vertical_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b2_a_vertical_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/b2_a_vertical_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b2_a_vertical_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">b2_a_vertical_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>B - Switch con el core</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b2_b_switch_core_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b2_b_switch_core_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b2_b_switch_core_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/b2_b_switch_core_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b2_b_switch_core_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/b2_b_switch_core_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    <div><div class="label">Caratula elemento 3</div><img src="images/b2_b_switch_core_caratula_elemento_3.png" alt="Caratula elemento 3"></div>
+    <div><div class="label">Caratula elemento 4</div><img src="images/b2_b_switch_core_caratula_elemento_4.png" alt="Caratula elemento 4"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>C - Foto 1:1</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b2_c_foto_cuadrada_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b2_c_foto_cuadrada_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b2_c_foto_cuadrada_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/b2_c_foto_cuadrada_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b2_c_foto_cuadrada_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/b2_c_foto_cuadrada_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>D - Foto/video horizontal</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b2_d_foto_horizontal_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b2_d_foto_horizontal_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b2_d_foto_horizontal_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/b2_d_foto_horizontal_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b2_d_foto_horizontal_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/b2_d_foto_horizontal_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>E - Gran enfoque</summary>
+<div>
+  <p>Reportaje curado y bien formulado que ofrece una mirada propia y diferencial sobre un tema.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b2_e_gran_enfoque_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b2_e_gran_enfoque_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b2_e_gran_enfoque_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/b2_e_gran_enfoque_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b2_e_gran_enfoque_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">b2_e_gran_enfoque_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details>
+
+<hr>
+<h2>Acuerdos</h2>
+<ul>
+  <li>Presencia permanente, convive con el Bloque 1.</li>
+  <li>Columna derecha: doble roba (condicionante fijo de layout).</li>
+  <li>En momentos de alta carga informativa, se pone al servicio de la apertura.</li>
+</ul>
+</div>
+
+<!-- ========== B3 ========== -->
+<div class="page" id="b3">
+<h1>B3 - Opinion / Eventos / Nichos</h1>
+<blockquote>Bloque obligatorio que cumple una funcion estructural: actua como separador entre las dos posiciones publicitarias. <strong>No es un balcon de seccion bajo ningun concepto.</strong></blockquote>
+<hr>
+
+<h2>Jerarquia de uso</h2>
+<table>
+  <tr><th>Prioridad</th><th>Contenido</th><th>Criterio</th></tr>
+  <tr><td><strong>1a</strong></td><td>Opinion</td><td>La mayoria de los dias</td></tr>
+  <tr><td><strong>2a</strong></td><td>Eventos de gran relevancia</td><td>Cuando la opinion ocupa otro espacio y existe un evento de entidad</td></tr>
+  <tr><td><strong>3a</strong></td><td>Nichos (inmobiliario, juridico, defensa)</td><td>Cuando no concurre ni opinion ni evento relevante</td></tr>
+</table>
+
+<hr>
+<h2>Casos de uso</h2>
+
+<details>
+<summary>Opinion</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b3_opinion_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b3_opinion_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b3_opinion_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/b3_opinion_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b3_opinion_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/b3_opinion_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Eventos de gran relevancia</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b3_eventos_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b3_eventos_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b3_eventos_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><div class="placeholder">b3_eventos_caratula_grupo</div></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b3_eventos_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/b3_eventos_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Nichos</summary>
+<div>
+  <p>Inmobiliario, juridico, defensa.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b3_nichos_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b3_nichos_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b3_nichos_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/b3_nichos_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/b3_nichos_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">b3_nichos_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details>
+
+<hr>
+<h2>Acuerdos</h2>
+<ul>
+  <li>Presencia permanente (funcion estructural: separa las dos posiciones publicitarias).</li>
+  <li>No es un balcon de seccion en ningun caso.</li>
+  <li>Layout variable segun las necesidades del contenido.</li>
+</ul>
+</div>
+
+<!-- ========== B4 ========== -->
+<div class="page" id="b4">
+<h1>B4 - El Corecito</h1>
+<blockquote>Bloque fijo de actualidad hard con carga grafica reducida. Independiente editorialmente de los Bloques 1 y 2.</blockquote>
+<hr><h2>Templates</h2>
+
+<details open>
+<summary>Template A - Un solo titulo de grupo</summary>
+<div>
+  <p><strong>Cuando se usa:</strong> no existen temas agrupables; actualidad variada.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/corecito_template_a_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/corecito_template_a_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/corecito_template_a_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/corecito_template_a_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/corecito_template_a_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/corecito_template_a_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    <div><div class="label">Caratula elemento 3</div><img src="images/corecito_template_a_caratula_elemento_3.png" alt="Caratula elemento 3"></div>
+    <div><div class="label">Caratula elemento 4</div><img src="images/corecito_template_a_caratula_elemento_4.png" alt="Caratula elemento 4"></div>
+  </div>
+  <table><tr><th>Estructura</th><th>Temas agrupables</th></tr><tr><td>6 temas sueltos e independientes</td><td>No</td></tr></table>
+</div>
+</details><hr>
+
+<details>
+<summary>Template B - Dos titulos de grupo</summary>
+<div>
+  <p><strong>Cuando se usa:</strong> existen dos temas con desarrollo suficiente para agrupar 3 piezas cada uno.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/corecito_template_b_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/corecito_template_b_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/corecito_template_b_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><div class="placeholder">corecito_template_b_caratula_grupo</div></div>
+    <div><div class="label">Caratula elemento 1</div><div class="placeholder">corecito_template_b_caratula_elemento_1</div></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">corecito_template_b_caratula_elemento_2</div></div>
+  </div>
+  <table><tr><th>Estructura</th><th>Temas agrupables</th></tr><tr><td>2 bloques de 3 noticias agrupadas</td><td>Si (2)</td></tr></table>
+</div>
+</details>
+
+<hr>
+<h2>Acuerdos</h2>
+<ul>
+  <li>Carga grafica reducida.</li>
+  <li>Contenido hard / actualidad.</li>
+  <li>Independiente de los Bloques 1 y 2.</li>
+  <li>La seleccion de template depende de si existen temas agrupables, no de la importancia de las noticias.</li>
+  <li>Publicidad doble roba en la columna derecha.</li>
+</ul>
+</div>
+
+<!-- ========== ISSUES ========== -->
+<div class="page" id="issues">
+<h1>Issues (B5-B9)</h1>
+<blockquote>Zona flexible de bloques tematicos editoriales que equilibra actualidad hard con reportajes y contenido branded premium.</blockquote>
+<hr>
+<h2>Definicion de Issue</h2>
+<p>Un issue es un bloque tematico centrado en un asunto concreto (ej: "La Champions League", "El caso Begona"), nunca en una seccion generica ("Deportes").</p>
+
+<hr><h2>Templates</h2>
+
+<details>
+<summary>Issue estandar</summary>
+<div>
+  <p>1 pieza principal + secundarias opcionales (de 1 a 6 piezas, admite bolillos).</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/issue_estandar_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/issue_estandar_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/issue_estandar_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/issue_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/issue_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/issue_estandar_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Issue con navegacion</summary>
+<div>
+  <p>Issue con navegacion propia (contenido de servicio vinculado al tema: cronologia, guia visual, protagonistas...). Opcional.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/issue_con_navegacion_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/issue_con_navegacion_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/issue_con_navegacion_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/issue_con_navegacion_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/issue_con_navegacion_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/issue_con_navegacion_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Branded diamante</summary>
+<div>
+  <p>Comparte template con los issues, diferenciado mediante el logo de cliente en el nombre del grupo.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/issue_branded_diamante_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/issue_branded_diamante_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/issue_branded_diamante_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/issue_branded_diamante_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/issue_branded_diamante_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/issue_branded_diamante_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Alta carga grafica</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/issue_alta_carga_grafica_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/issue_alta_carga_grafica_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/issue_alta_carga_grafica_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/issue_alta_carga_grafica_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/issue_alta_carga_grafica_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">issue_alta_carga_grafica_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Foto horizontal</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/issue_foto_horizontal_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/issue_foto_horizontal_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/issue_foto_horizontal_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/issue_foto_horizontal_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/issue_foto_horizontal_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/issue_foto_horizontal_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details>
+
+<hr>
+<h2>Acuerdos</h2>
+<ul>
+  <li>Maximo de 6-7 issues en esta zona.</li>
+  <li><strong>Maximo de 3 issues antes de la posicion publicitaria.</strong></li>
+  <li>Los primeros issues deberian dedicarse a reportajes.</li>
+  <li>Cada issue presenta 1 pieza principal + secundarias opcionales (de 1 a 6 piezas, admite bolillos).</li>
+  <li>Todos los templates admiten video, fotografia o grafico.</li>
+  <li>Variedad obligatoria en forma y tipologia entre los distintos issues.</li>
+</ul>
+</div>
+
+<!-- ========== LO MEJOR ========== -->
+<div class="page" id="mejor">
+<h1>Lo mejor de EC</h1>
+<blockquote>Balcon personalizado con curacion editorial. El lector recibe una seleccion adaptada a sus intereses, pero con el criterio y el filtro de la redaccion.</blockquote>
+<hr>
+
+<table>
+  <tr><th>Aspecto</th><th>Detalle</th></tr>
+  <tr><td><strong>Contenido</strong></td><td>Seleccion curada por redaccion, personalizada para el lector</td></tr>
+  <tr><td><strong>Piezas</strong></td><td>6</td></tr>
+  <tr><td><strong>Layout</strong></td><td>Comparte estructura con el Corecito + publicidad a la derecha</td></tr>
+  <tr><td><strong>Tematica</strong></td><td>Sin restriccion</td></tr>
+</table>
+
+<hr><h2>Template</h2>
+<details open>
+<summary>Lo mejor de EC</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/lo_mejor_ec_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/lo_mejor_ec_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/lo_mejor_ec_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/lo_mejor_ec_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><div class="placeholder">lo_mejor_ec_caratula_elemento_1</div></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">lo_mejor_ec_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details>
+</div>
+
+<!-- ========== BRANDED ========== -->
+<div class="page" id="branded">
+<h1>Branded</h1>
+<blockquote>Posiciones branded distribuidas a lo largo de la portada.</blockquote>
+<hr><h2>Casos de uso</h2>
+
+<details open>
+<summary>Branded oro</summary>
+<div>
+  <p>Posicion branded ubicada encima de SEO croll. Comparte posiciones con SEO croll. 4 piezas.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/branded_oro_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/branded_oro_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/branded_oro_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/branded_oro_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/branded_oro_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">branded_oro_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Balcon Santander</summary>
+<div>
+  <p>Ubicacion: entre Nuestra seleccion y Secciones secundarias. 4 piezas. Logotipo de Santander en el titulo del balcon.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/branded_balcon_santander_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/branded_balcon_santander_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/branded_balcon_santander_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/branded_balcon_santander_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/branded_balcon_santander_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">branded_balcon_santander_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Lo mas viral (variante Branded)</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/branded_lo_mas_viral_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/branded_lo_mas_viral_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/branded_lo_mas_viral_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/branded_lo_mas_viral_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/branded_lo_mas_viral_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">branded_lo_mas_viral_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Branded diamante</summary>
+<div>
+  <p>Ubicacion: dentro de la zona de Issues. Comparte template con los issues, diferenciado mediante el logo de cliente en el nombre del grupo.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/branded_diamante_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/branded_diamante_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/branded_diamante_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/branded_diamante_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/branded_diamante_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/branded_diamante_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details>
+</div>
+
+<!-- ========== CARROUSEL VIDEO ========== -->
+<div class="page" id="carrusel">
+<h1>Carrousel Video</h1>
+<blockquote>Carrusel de videos verticales.</blockquote>
+<hr><h2>Template</h2>
+
+<details open>
+<summary>Carrousel Video</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/carrusel_video_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/carrusel_video_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/carrusel_video_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><div class="placeholder">carrusel_video_caratula_grupo</div></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/carrusel_video_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/carrusel_video_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details>
+</div>
+
+<!-- ========== LO MAS VIRAL (standalone) ========== -->
+<div class="page" id="lo-mas-viral">
+<h1>Lo mas viral</h1>
+<hr><h2>Template</h2>
+
+<details open>
+<summary>Lo mas viral</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/lo_mas_viral_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/lo_mas_viral_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/lo_mas_viral_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/lo_mas_viral_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/lo_mas_viral_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">lo_mas_viral_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details>
+</div>
+
+<!-- ========== NUESTRA SELECCION ========== -->
+<div class="page" id="seleccion">
+<h1>Nuestra seleccion</h1>
+<blockquote><em>Antes denominado "Seleccion PRO".</em></blockquote>
+<hr><h2>Template</h2>
+
+<details open>
+<summary>Nuestra seleccion</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/nuestra_seleccion_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/nuestra_seleccion_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/nuestra_seleccion_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/nuestra_seleccion_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula de grupo 2</div><img src="images/nuestra_seleccion_caratula_grupo_2.png" alt="Caratula grupo 2"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/nuestra_seleccion_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/nuestra_seleccion_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    <div><div class="label">Caratula elemento 3</div><img src="images/nuestra_seleccion_caratula_elemento_3.png" alt="Caratula elemento 3"></div>
+  </div>
+</div>
+</details>
+</div>
+
+<!-- ========== ESPACIO DEL SUSCRIPTOR ========== -->
+<div class="page" id="suscriptor">
+<h1>Espacio del suscriptor</h1>
+<blockquote>Zona dedicada al suscriptor.</blockquote>
+<hr><h2>Template</h2>
+
+<details open>
+<summary>Balcon del suscriptor</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/balcon_suscriptor_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/balcon_suscriptor_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/balcon_suscriptor_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/balcon_suscriptor_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula de grupo 2</div><img src="images/balcon_suscriptor_caratula_grupo_2.png" alt="Caratula grupo 2"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/balcon_suscriptor_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/balcon_suscriptor_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details>
+</div>
+
+<!-- ========== FAVORITOS DEL SUSCRIPTOR ========== -->
+<div class="page" id="favoritos-suscriptor">
+<h1>Favoritos del suscriptor</h1>
+<hr><h2>Template</h2>
+
+<details open>
+<summary>Balcon del suscriptor (favoritos)</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/favoritos_suscriptor_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/favoritos_suscriptor_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/favoritos_suscriptor_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/favoritos_suscriptor_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><div class="placeholder">favoritos_suscriptor_caratula_elemento_1</div></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">favoritos_suscriptor_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details>
+</div>
+
+<!-- ========== SECCIONES DESTACADAS ========== -->
+<div class="page" id="secciones-dest">
+<h1>Secciones destacadas</h1>
+<blockquote>Balcones de gestion manual con orden fijo. Comparten el sistema de templates con los issues, diferenciandose por un titulo de bloque con mayor peso visual.</blockquote>
+<hr>
+
+<table>
+  <tr><th>Aspecto</th><th>Detalle</th></tr>
+  <tr><td><strong>Secciones</strong></td><td>Espana, Economia, Empresas, Internacional</td></tr>
+  <tr><td><strong>Templates</strong></td><td>Compartidos con los issues, variables segun contenido</td></tr>
+  <tr><td><strong>Orden</strong></td><td>Fijo (se establece una vez y no varia en el dia a dia)</td></tr>
+  <tr><td><strong>Gestion</strong></td><td>Manual</td></tr>
+</table>
+
+<hr><h2>Casos de uso</h2>
+
+<details>
+<summary>Seccion destacada estandar</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/seccion_destacada_estandar_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/seccion_destacada_estandar_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/seccion_destacada_estandar_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/seccion_destacada_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/seccion_destacada_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/seccion_destacada_estandar_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Seccion destacada con subseccion</summary>
+<div>
+  <p>Con navegacion de subsecciones.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/seccion_destacada_con_subseccion_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/seccion_destacada_con_subseccion_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/seccion_destacada_con_subseccion_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/seccion_destacada_con_subseccion_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/seccion_destacada_con_subseccion_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/seccion_destacada_con_subseccion_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Economia (con widget)</summary>
+<div>
+  <p>Particularidad de Economia: Widget de cotizaciones + Grafico del Ibex.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/seccion_destacada_economia_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/seccion_destacada_economia_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/seccion_destacada_economia_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/seccion_destacada_economia_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/seccion_destacada_economia_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/seccion_destacada_economia_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Seccion destacada con foto vertical</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/seccion_destacada_foto_vertical_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/seccion_destacada_foto_vertical_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/seccion_destacada_foto_vertical_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/seccion_destacada_foto_vertical_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/seccion_destacada_foto_vertical_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/seccion_destacada_foto_vertical_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details>
+</div>
+
+<!-- ========== SECCIONES SECUNDARIAS ========== -->
+<div class="page" id="secciones-sec">
+<h1>Secciones secundarias</h1>
+<blockquote>Balcones automatizados con template unico y orden fijo. La automatizacion permite que la redaccion concentre sus recursos en los espacios que requieren curacion manual.</blockquote>
+<hr>
+
+<table>
+  <tr><th>Aspecto</th><th>Detalle</th></tr>
+  <tr><td><strong>Secciones</strong></td><td>Cultura y Arte, Tecnologia, Salud, Deportes y Bienestar, Digital+</td></tr>
+  <tr><td><strong>Template</strong></td><td>Unico: 1 noticia con fotografia arriba + 2-3 sin fotografia debajo</td></tr>
+  <tr><td><strong>Piezas</strong></td><td>3-4 por seccion</td></tr>
+  <tr><td><strong>Orden</strong></td><td>Fijo</td></tr>
+  <tr><td><strong>Gestion</strong></td><td>Automatizado</td></tr>
+</table>
+
+<hr><h2>Template</h2>
+<details open>
+<summary>Seccion secundaria</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/seccion_secundaria_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/seccion_secundaria_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/seccion_secundaria_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/seccion_secundaria_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><div class="placeholder">seccion_secundaria_caratula_elemento_1</div></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">seccion_secundaria_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details>
+</div>
+
+<!-- ========== VANITATIS ========== -->
+<div class="page" id="vanitatis">
+<h1>Vanitatis</h1>
+<hr><h2>Template</h2>
+
+<details open>
+<summary>Vanitatis</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/vanitatis_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/vanitatis_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/vanitatis_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/vanitatis_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/vanitatis_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/vanitatis_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    <div><div class="label">Caratula elemento 3</div><img src="images/vanitatis_caratula_elemento_3.png" alt="Caratula elemento 3"></div>
+  </div>
+</div>
+</details>
+</div>
+
+<!-- ========== TELEVISIÓN ========== -->
+<div class="page" id="tele">
+<h1>Televisi&oacute;n</h1>
+<hr><h2>Template</h2>
+
+<details open>
+<summary>Televisi&oacute;n</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/tele_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/tele_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/tele_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/tele_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/tele_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">tele_caratula_elemento_2</div></div>
+  </div>
+</div>
+</details>
+</div>
+
+<!-- ========== DE COMPRAS ========== -->
+<div class="page" id="compras">
+<h1>De compras</h1>
+<hr>
+
+<table>
+  <tr><th>Aspecto</th><th>Detalle</th></tr>
+  <tr><td><strong>Ubicacion</strong></td><td>Tras balcon ECI/Moeve</td></tr>
+  <tr><td><strong>Piezas</strong></td><td>6 (2 con foto + 4 sin foto)</td></tr>
+  <tr><td><strong>Particularidades</strong></td><td>Publicidad en columna derecha</td></tr>
+</table>
+
+<hr><h2>Template</h2>
+<details open>
+<summary>De compras</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/de_compras_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/de_compras_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/de_compras_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/de_compras_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/de_compras_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/de_compras_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details>
+</div>
+
+<!-- ========== OPINION ========== -->
+<div class="page" id="opinion">
+<h1>Opinion</h1>
+<blockquote>La opinion mantiene presencia permanente en portada. Es uno de los contenidos mas valorados por los lectores y, por tanto, recibe un tratamiento visual mas cuidado: contenido premium exige presentacion premium.</blockquote>
+<hr>
+<h2>Combinaciones posibles</h2>
+<p>Cinco casos de uso, cada uno con una ubicacion y un numero de piezas distintos.</p>
+<hr>
+
+<details open>
+<summary>Listado en apertura</summary>
+<div>
+  <p>Listado de opinadores con fotografia engatillada en la columna derecha del Bloque 1.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/opinion_listado_apertura_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/opinion_listado_apertura_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/opinion_listado_apertura_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/opinion_listado_apertura_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/opinion_listado_apertura_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">opinion_listado_apertura_caratula_elemento_2</div></div>
+  </div>
+  <table><tr><th>Ubicacion</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>Bloque 1 - columna derecha</td><td>2</td><td>4</td></tr></table>
+</div>
+</details><hr>
+
+<details>
+<summary>Balcon estandar</summary>
+<div>
+  <p>Caso por defecto del Bloque 3 cuando hay 3-4 opiniones del dia sin un destaque claro. Fotografias 1:1 cuidadas o ilustracion. Admite carrusel.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/opinion_balcon_estandar_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/opinion_balcon_estandar_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/opinion_balcon_estandar_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/opinion_balcon_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/opinion_balcon_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><div class="placeholder">opinion_balcon_estandar_caratula_elemento_2</div></div>
+  </div>
+  <table><tr><th>Ubicacion</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>Bloque 3</td><td>3</td><td>4</td></tr></table>
+</div>
+</details><hr>
+
+<details>
+<summary>Balcon estandar destacado</summary>
+<div>
+  <p>Una opinion del dia tiene mayor peso que el resto. Composicion: 1 destacada + 2-3 en listado.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/opinion_balcon_destacado_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/opinion_balcon_destacado_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/opinion_balcon_destacado_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/opinion_balcon_destacado_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/opinion_balcon_destacado_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/opinion_balcon_destacado_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+  <table><tr><th>Ubicacion</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>Bloque 3</td><td>3 (1 destacada + 2 listado)</td><td>4 (1 destacada + 3 listado)</td></tr></table>
+</div>
+</details><hr>
+
+<details>
+<summary>Superopinion + estandar</summary>
+<div>
+  <p>Una opinion del dia tiene tal entidad que merece ocupar el Bloque 2 con un template vertical, acompanada del balcon completo en B3.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/opinion_superopinion_estandar_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/opinion_superopinion_estandar_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/opinion_superopinion_estandar_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/opinion_superopinion_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/opinion_superopinion_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/opinion_superopinion_estandar_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+  <table><tr><th>Ubicacion</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>Bloque 2 + Bloque 3</td><td>5 (1 superopinion + 4 estandar 1:1)</td><td>5</td></tr></table>
+</div>
+</details><hr>
+
+<details>
+<summary>Superopinion + listado</summary>
+<div>
+  <p>Una opinion vertebra un issue editorial. Solo se utiliza como <strong>primer issue</strong> de la zona de issues.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/opinion_superopinion_listado_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/opinion_superopinion_listado_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/opinion_superopinion_listado_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <table><tr><th>Nombre</th><td><code>[PENDIENTE]</code></td></tr></table>
+  <div class="caratulas">
+    <div><div class="label">Caratula de grupo</div><img src="images/opinion_superopinion_listado_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Caratula elemento 1</div><img src="images/opinion_superopinion_listado_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Caratula elemento 2</div><img src="images/opinion_superopinion_listado_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+  <table><tr><th>Ubicacion</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>Zona de issues (primer issue)</td><td>3</td><td>5</td></tr></table>
+</div>
+</details>
+
+<hr>
+<h2>Acuerdos</h2>
+<ul>
+  <li>La seleccion del caso de uso depende del tipo de opiniones disponibles y de la tematica que abordan.</li>
+  <li>La opinion tiene presencia permanente en portada en alguno de estos formatos.</li>
+  <li>Contenido premium exige presentacion premium.</li>
+  <li>"Superopinion + listado" no se puede usar fuera del primer issue de la zona de issues.</li>
+</ul>
+</div>
+
+</div><!-- .content-area -->
+
+<script>
+(function() {
+  const links = document.querySelectorAll('.sidebar a[href^="#"]');
+  const idToLink = new Map();
+  const pages = [];
+
+  links.forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    const page = document.getElementById(id);
+    if (page) {
+      idToLink.set(id, a);
+      pages.push(page);
+    }
+  });
+
+  function setActive(id) {
+    links.forEach(a => a.classList.remove('active'));
+    const link = idToLink.get(id);
+    if (link) {
+      link.classList.add('active');
+      // Scroll link into view within sidebar if off-screen
+      const sidebar = document.querySelector('.sidebar');
+      const linkRect = link.getBoundingClientRect();
+      const sideRect = sidebar.getBoundingClientRect();
+      if (linkRect.top < sideRect.top || linkRect.bottom > sideRect.bottom) {
+        link.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      }
+    }
+  }
+
+  // Scroll-spy: find the page closest to top of viewport
+  function onScroll() {
+    let bestId = null;
+    let bestTop = -Infinity;
+    const threshold = 120; // px from top
+    for (const page of pages) {
+      const top = page.getBoundingClientRect().top;
+      if (top <= threshold && top > bestTop) {
+        bestTop = top;
+        bestId = page.id;
+      }
+    }
+    if (bestId) setActive(bestId);
+  }
+
+  // Click: immediately set active
+  links.forEach(a => {
+    a.addEventListener('click', function() {
+      const id = a.getAttribute('href').slice(1);
+      setTimeout(() => setActive(id), 50);
+    });
+  });
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // initial
+})();
+</script>
+
+</body>
+</html>
