@@ -52,6 +52,11 @@
 
   .placeholder { background: var(--bg-gray); border: 2px dashed var(--border); border-radius: 4px; padding: 40px; text-align: center; color: var(--text-secondary); font-size: 12px; min-height: 80px; display: flex; align-items: center; justify-content: center; }
 
+  .grupo-card { margin: 16px 0; }
+  .grupo-card img { max-width: 100%; border: 1px solid var(--border); border-radius: 4px; background: #fafafa; padding: 8px; }
+  .grupo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .grupo-grid img { width: 100%; border: 1px solid var(--border); border-radius: 4px; background: #fafafa; padding: 8px; }
+
   .sidebar { position: fixed; top: 0; left: 0; width: 240px; height: 100vh; background: var(--bg-gray); padding: 20px 12px; overflow-y: auto; font-size: 14px; }
   .sidebar a { display: block; padding: 6px 12px; border-radius: 4px; text-decoration: none; color: var(--text-secondary); transition: background 0.1s, color 0.1s; }
   .sidebar a:hover { background: #e8e7e4; color: var(--text); }
@@ -126,6 +131,8 @@
 
 <nav class="sidebar">
   <div class="title">Guia portada 2026</div>
+  <a href="#principios">Principios generales</a>
+  <a href="#grupos">Grupos</a>
   <a href="#mapa">Mapa de la portada</a>
   <a href="#b1">B1 - Apertura principal</a>
   <a href="#b2">B2 - Enfoques y análisis</a>
@@ -148,6 +155,179 @@
 </nav>
 
 <div class="content-area">
+
+<!-- ========== PRINCIPIOS ========== -->
+<div class="page" id="principios">
+<h1>Principios generales</h1>
+<hr>
+
+<h2>La portada crece hacia abajo, nunca hacia arriba</h2>
+<p>Ante un acontecimiento relevante, el despliegue informativo se amplía añadiendo piezas y templates hacia abajo. La única apertura que se apila por encima es la de pared a pared. Un gran tema puede ocupar el Bloque 1, utilizar el Bloque 2 como apoyo e incluso convertir el Bloque 3 en parte de la cobertura, pero siempre en sentido descendente.</p>
+
+<h2>Apoyos en apertura + publicidad</h2>
+<p>Las aperturas default son el recurso habitual (sin apoyos). Los templates de alta carga visual (con apoyos) se reservan para las ocasiones que lo justifican editorialmente.</p>
+<p>Las aperturas default se han pensado sin apoyos para que sean el formato base del día a día por jerarquización temática y número de temas de una cobertura diaria. Con esta estructura, además, la publicidad se mantiene en su posición natural sin que la portada la empuje hacia abajo sin necesidad.</p>
+<p>Cuando la relevancia informativa lo pide están los templates con apoyos (bandera, pared a pared, alta carga gráfica), que dan más cabida en número de temas. En estos formatos su impacto depende mucho de no abusar de ellos: si el lector se los encuentra a menudo, dejan de significar nada especial. Si aparecen en momentos puntuales, el propio formato ya comunica que algo importante está pasando.</p>
+<p>No se trata de limitar las opciones editoriales, sino de que cada formato cumpla su función y facilite la lectura al lector.</p>
+</div>
+
+<!-- ========== GRUPOS ========== -->
+<div class="page" id="grupos">
+<h1>Grupos</h1>
+<blockquote>Los grupos son la unidad estructural dentro de cada balcón. Determinan cuántas columnas ocupa el contenido y cómo se distribuyen los elementos en su interior.</blockquote>
+<hr>
+
+<h2>Lógica general</h2>
+<p>La portada se basa en una rejilla de <strong>12 columnas</strong>. Cada balcón contiene uno o más grupos, y cada grupo ocupa un número determinado de esas columnas:</p>
+<table>
+  <tr><th>Grupo</th><th>Columnas</th><th>Ancho</th></tr>
+  <tr><td>12 columnas</td><td>12</td><td>100% del ancho</td></tr>
+  <tr><td>8 columnas</td><td>8</td><td>2/3 del ancho (se usa normalmente con publicidad a la derecha)</td></tr>
+  <tr><td>4 columnas</td><td>4</td><td>1/3 del ancho</td></tr>
+</table>
+<p>Los elementos dentro de un grupo ocupan el ancho completo de las columnas de ese grupo.</p>
+<p><strong>Los títulos de sección y las navegaciones viven a nivel de grupo.</strong> Esto tiene implicaciones importantes: si necesitas titular dos bloques de forma independiente, necesitas dos grupos separados (por ejemplo, un Grupo 8 col + un Grupo 4 col). Si en cambio quieres un solo grupo con artículo principal y apoyos bajo un mismo título, usarías un Grupo Issue 8+4.</p>
+
+<hr>
+<h2>Catálogo de grupos</h2>
+
+<details open>
+<summary>Grupo 12 col</summary>
+<div>
+  <p>Grupo a ancho completo. Los elementos se distribuyen en las 12 columnas. Usado en balcones que no conviven con publicidad lateral.</p>
+  <h3>Comportamiento responsive</h3>
+  <table>
+    <tr><th>Breakpoint</th><th>Comportamiento</th></tr>
+    <tr><td><strong>Desktop</strong></td><td>Todos los elementos se muestran con foto y entradilla.</td></tr>
+    <tr><td><strong>Tablet</strong></td><td>La segunda fila de elementos pierde foto y entradilla.</td></tr>
+    <tr><td><strong>Mobile</strong></td><td>Todo lo que va después del primer elemento pierde foto y entradilla.</td></tr>
+  </table>
+  <h3>Ejemplo</h3>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/grupo_12col_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/grupo_12col_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/grupo_12col_mobile.png" alt="Mobile"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Grupo 8 col</summary>
+<div>
+  <p>Ocupa 2/3 del ancho (8 de 12 columnas). Es el grupo más habitual en balcones que conviven con publicidad (doble roba) en la columna derecha.</p>
+  <h3>Comportamiento responsive</h3>
+  <table>
+    <tr><th>Breakpoint</th><th>Comportamiento</th></tr>
+    <tr><td><strong>Desktop</strong></td><td>Todos los elementos se muestran con foto y entradilla.</td></tr>
+    <tr><td><strong>Tablet</strong></td><td>La segunda fila de elementos pierde foto y entradilla.</td></tr>
+    <tr><td><strong>Mobile</strong></td><td>Todo lo que va después del primer elemento pierde foto y entradilla.</td></tr>
+  </table>
+  <h3>Ejemplo</h3>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/grupo_8col_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/grupo_8col_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/grupo_8col_mobile.png" alt="Mobile"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Grupo 4 col</summary>
+<div>
+  <p>Ocupa 1/3 del ancho (4 de 12 columnas). Se usa como complemento de un Grupo 8 col cuando se necesita un bloque independiente con su propio título (ej: columna de opinión junto a la apertura).</p>
+  <h3>Comportamiento responsive</h3>
+  <table>
+    <tr><th>Breakpoint</th><th>Comportamiento</th></tr>
+    <tr><td><strong>Desktop</strong></td><td>Todos los elementos se muestran con foto y entradilla.</td></tr>
+    <tr><td><strong>Tablet</strong></td><td>Todos los elementos pierden foto y entradilla.</td></tr>
+    <tr><td><strong>Mobile</strong></td><td>Todo lo que va después del primer elemento pierde foto y entradilla.</td></tr>
+  </table>
+  <h3>Ejemplo</h3>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/grupo_4col_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/grupo_4col_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/grupo_4col_mobile.png" alt="Mobile"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Grupo Issue 8+4</summary>
+<div>
+  <p>Un solo grupo que distribuye 12 columnas en 8 (artículo principal) + 4 (apoyos), bajo un mismo título de sección. A diferencia de usar un Grupo 8 + un Grupo 4 por separado, aquí todo el contenido pertenece al mismo issue y comparte título.</p>
+  <h3>Comportamiento responsive</h3>
+  <table>
+    <tr><th>Breakpoint</th><th>Comportamiento</th></tr>
+    <tr><td><strong>Desktop</strong></td><td>Todos los elementos se muestran con foto y entradilla.</td></tr>
+    <tr><td><strong>Tablet</strong></td><td>Los elementos de la parte de 4 columnas pierden foto y entradilla.</td></tr>
+    <tr><td><strong>Mobile</strong></td><td>Todo lo que va después del primer elemento en la parte de 4 columnas pierde foto y entradilla.</td></tr>
+  </table>
+  <h3>Ejemplo</h3>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/grupo_issue_8_4_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/grupo_issue_8_4_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/grupo_issue_8_4_mobile.png" alt="Mobile"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Grupo Carrousel 12 col</summary>
+<div>
+  <p>Carrusel horizontal a ancho completo. Los elementos se desplazan lateralmente con controles de navegación. Usado para carruseles de video y contenido branded.</p>
+  <h3>Ejemplo</h3>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/grupo_carrousel_12col_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/grupo_carrousel_12col_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/grupo_carrousel_12col_mobile.png" alt="Mobile"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Grupo 12 col foto (branded)</summary>
+<div>
+  <p>Variante del grupo 12 col con mayor protagonismo fotográfico. Reservado para posiciones branded.</p>
+  <h3>Comportamiento responsive</h3>
+  <p>Todos los elementos mantienen sus imágenes en todos los breakpoints. Es un requisito de branded que las fotos nunca se oculten.</p>
+  <h3>Ejemplo</h3>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/grupo_12col_foto_branded_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/grupo_12col_foto_branded_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/grupo_12col_foto_branded_mobile.png" alt="Mobile"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Grupo Core</summary>
+<div>
+  <p>Grupo especializado, solo se usa en el balcón del Core. El primer elemento ocupa 8 columnas, y los siguientes se colocan debajo adaptándose al espacio disponible.</p>
+  <h3>Ejemplo</h3>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/grupo_core_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/grupo_core_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/grupo_core_mobile.png" alt="Mobile"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Grupo 5+3</summary>
+<div>
+  <p>Distribuye 8 columnas en 5 (artículo principal) + 3 (apoyos). <strong>Solo se usa en el Bloque 2.</strong></p>
+  <h3>Comportamiento responsive</h3>
+  <p>No se ocultan fotos ni entradillas en ningún breakpoint. Todos los elementos mantienen su contenido completo.</p>
+  <h3>Ejemplo</h3>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/grupo_5_3_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/grupo_5_3_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/grupo_5_3_mobile.png" alt="Mobile"></div>
+  </div>
+</div>
+</details>
+
+</div>
 
 <!-- ========== MAPA ========== -->
 <div class="page" id="mapa">
@@ -408,7 +588,6 @@
 <h1>B3 - Opinion / Eventos / Nichos</h1>
 <blockquote>Bloque obligatorio que cumple una función estructural: actua como separador entre las dos posiciónes publicitarias. <strong>No es un balcón de sección bajo ningún concepto.</strong></blockquote>
 <hr>
-
 <h2>Jerarquía de uso</h2>
 <table>
   <tr><th>Prioridad</th><th>Contenido</th><th>Criterio</th></tr>
