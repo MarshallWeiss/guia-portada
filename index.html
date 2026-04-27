@@ -50,6 +50,10 @@
   summary:hover { background: var(--bg-gray); border-radius: 4px; }
   details > div { padding-left: 24px; }
 
+  .needs-update { position: relative; }
+  .needs-update img, .needs-update .placeholder { border: 3px solid #e03e3e !important; }
+  .needs-update::after { content: attr(data-reason); position: absolute; bottom: 4px; left: 4px; right: 4px; background: #e03e3e; color: #fff; font-size: 10px; font-weight: 600; padding: 3px 6px; border-radius: 2px; text-align: center; pointer-events: none; }
+
   .placeholder { background: var(--bg-gray); border: 2px dashed var(--border); border-radius: 4px; padding: 40px; text-align: center; color: var(--text-secondary); font-size: 12px; min-height: 80px; display: flex; align-items: center; justify-content: center; }
 
   .grupo-card { margin: 16px 0; }
@@ -143,10 +147,10 @@
   <a href="#carrusel">Carrousel Video</a>
   <a href="#lo-mas-viral">Lo más viral</a>
   <a href="#branded">Branded</a>
-  <a href="#secciones-dest">Secciones destacadas</a>
+  <a href="#secciones-dest">Secciones manuales</a>
   <a href="#seleccion">Nuestra selección</a>
   <a href="#suscriptor">Espacio del suscriptor</a>
-  <a href="#secciones-sec">Secciones secundarias</a>
+  <a href="#secciones-sec">Secciones automáticas</a>
   <a href="#favoritos-suscriptor">Favoritos del suscriptor</a>
   <a href="#vanitatis">Vanitatis</a>
   <a href="#tele">Televisi&oacute;n</a>
@@ -176,7 +180,7 @@
 <h1>Mapa de la portada</h1>
 <blockquote>Vista general de todos los bloques que componen la portada y su disposición en la página.</blockquote>
 <hr>
-<img src="images/00_esqueleto.jpg" alt="Mapa completo de la portada" style="width:100%; border:1px solid var(--border); border-radius:4px;">
+<div class="needs-update" data-reason="Cambiar por nueva foto con actualizaciones de Figma"><img src="images/00_esqueleto.jpg" alt="Mapa completo de la portada" style="width:100%; border-radius:4px;"></div>
 </div>
 
 <!-- ========== B1 ========== -->
@@ -189,7 +193,7 @@
 <hr>
 
 <details open>
-<summary>Template A - Default con foto cuadrada (1:1)</summary>
+<summary>Apertura Cuadrada (Default 1:1)</summary>
 <div>
   <p><strong>Cuando se usa:</strong> formato base diario. Dos variantes según el contenido:</p>
   <ul><li><em>Monotemática:</em> todo el bloque pertenece al mismo tema (1 pieza).</li><li><em>Multitopic:</em> la columna derecha aborda un tema independiente (2 piezas).</li></ul>
@@ -201,15 +205,15 @@
   <h3>En el CMS</h3>
   <div class="caratulas">
     <div><div class="label">Carátula de grupo</div><img src="images/b1_template_a_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b1_template_a_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/b1_template_a_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    <div class="needs-update" data-reason="Renombrar a 'apoyo con foto'"><div class="label">Apoyo con foto</div><img src="images/b1_template_a_caratula_elemento_1.png" alt="Apoyo con foto"></div>
+    <div class="needs-update" data-reason="Renombrar a 'apoyo sin foto'"><div class="label">Apoyo sin foto</div><img src="images/b1_template_a_caratula_elemento_2.png" alt="Apoyo sin foto"></div>
   </div>
   <table><tr><th>Apoyos</th><th>Foto</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>No</td><td>Cuadrada (1:1)</td><td>1</td><td>2</td></tr></table>
 </div>
 </details><hr>
 
 <details>
-<summary>Template B - Default con foto vertical (2:3)</summary>
+<summary>Apertura Vertical (Default 2:3)</summary>
 <div>
   <p><strong>Cuando se usa:</strong> mismo layout que A pero cuando la fotografía vertical contribuye narrativamente a la noticia.</p>
   <div class="screenshots">
@@ -229,7 +233,7 @@
 </details><hr>
 
 <details>
-<summary>Template C - Bandera</summary>
+<summary>Apertura en Bandera</summary>
 <div>
   <p><strong>Cuando se usa:</strong> cobertura con alta carga gráfica.</p>
   <div class="screenshots">
@@ -240,49 +244,15 @@
   <h3>En el CMS</h3>
   <div class="caratulas">
     <div><div class="label">Carátula de grupo</div><img src="images/b1_template_c_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b1_template_c_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Apertura en Bandera'"><div class="label">Carátula elemento 1</div><img src="images/b1_template_c_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
 
   </div>
 </div>
 </details><hr>
 
-<details>
-<summary>Template C - Bandera con apoyos</summary>
-<div>
-  <p><strong>Cuando se usa:</strong> cobertura con alta carga gráfica y suficientes artículos del mismo tema para justificar apoyos.</p>
-  <div class="screenshots">
-    <div><div class="label">Desktop</div><img src="images/b1_template_c_apoyos_desktop.png" alt="Desktop"></div>
-    <div><div class="label">Tablet</div><img src="images/b1_template_c_apoyos_tablet.png" alt="Tablet"></div>
-    <div><div class="label">Mobile</div><img src="images/b1_template_c_apoyos_mobile.png" alt="Mobile"></div>
-  </div>
-  <h3>En el CMS</h3>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b1_template_c_apoyos_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b1_template_c_apoyos_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/b1_template_c_apoyos_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
-  </div>
-</div>
-</details><hr>
 
 <details>
-<summary>Template D - Pared a pared</summary>
-<div>
-  <p><strong>Cuando se usa:</strong> máxima importancia informativa. Única apertura que puede apilarse por encima del flujo natural.</p>
-  <div class="screenshots">
-    <div><div class="label">Desktop</div><img src="images/b1_template_d_desktop.png" alt="Desktop"></div>
-    <div><div class="label">Tablet</div><img src="images/b1_template_d_tablet.png" alt="Tablet"></div>
-    <div><div class="label">Mobile</div><img src="images/b1_template_d_mobile.png" alt="Mobile"></div>
-  </div>
-  <h3>En el CMS</h3>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b1_template_d_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b1_template_d_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-  </div>
-</div>
-</details><hr>
-
-<details>
-<summary>Template E - Alta carga gráfica</summary>
+<summary>Apertura Alta Carga Gráfica</summary>
 <div>
   <p><strong>Cuando se usa:</strong> cobertura con alta carga gráfica y suficientes artículos del mismo tema para justificar apoyos.</p>
   <div class="screenshots">
@@ -293,8 +263,25 @@
   <h3>En el CMS</h3>
   <div class="caratulas">
     <div><div class="label">Carátula de grupo</div><img src="images/b1_template_e_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b1_template_e_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/b1_template_e_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Apertura Alta Carga'"><div class="label">Carátula elemento 1</div><img src="images/b1_template_e_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Apertura Alta Carga'"><div class="label">Carátula elemento 2</div><img src="images/b1_template_e_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Apertura Pared a Pared</summary>
+<div>
+  <p><strong>Cuando se usa:</strong> máxima importancia informativa. Única apertura que puede apilarse por encima del flujo natural.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/b1_template_d_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/b1_template_d_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/b1_template_d_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <div class="caratulas">
+    <div><div class="label">Carátula de grupo</div><img src="images/b1_template_d_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Apertura Pared a Pared'"><div class="label">Carátula elemento 1</div><img src="images/b1_template_d_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
   </div>
 </div>
 </details>
@@ -306,7 +293,7 @@
   <li><strong>Default dispone de dos variantes visuales</strong> según el ratio de imagen: cuadrada (1:1) o vertical (2:3).</li>
   <li><strong>Bandera, pared a pared y alta carga gráfica incorporan apoyos</strong>, siempre del mismo tema que la apertura.</li>
   <li><strong>Las default no incorporan apoyos.</strong></li>
-  <li><strong>La portada crece hacia abajo, nunca hacia arriba.</strong> Pared a pared es la única excepción.</li>
+  <li><strong>La portada crece hacia abajo, nunca hacia arriba.</strong> Pared a pared es la única apertura que puede convivir con otra.</li>
 </ul>
 </div>
 
@@ -317,7 +304,7 @@
 <hr><h2>Casos de uso</h2>
 
 <details>
-<summary>A - Version vertical</summary>
+<summary>Issue Vertical</summary>
 <div>
   <div class="screenshots">
     <div><div class="label">Desktop</div><img src="images/b2_a_vertical_desktop.png" alt="Desktop"></div>
@@ -327,14 +314,15 @@
   <h3>En el CMS</h3>
   <div class="caratulas">
     <div><div class="label">Carátula de grupo</div><img src="images/b2_a_vertical_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b2_a_vertical_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Issue Vertical'"><div class="label">Carátula elemento 1</div><img src="images/b2_a_vertical_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
   </div>
 </div>
 </details><hr>
 
 <details>
-<summary>B - Switch con el core</summary>
+<summary>Core</summary>
 <div>
+  <p><strong>Nota:</strong> No se pueden tener dos cores simultáneamente en la portada.</p>
   <div class="screenshots">
     <div><div class="label">Desktop</div><img src="images/b2_b_switch_core_desktop.png" alt="Desktop"></div>
     <div><div class="label">Tablet</div><img src="images/b2_b_switch_core_tablet.png" alt="Tablet"></div>
@@ -352,7 +340,7 @@
 </details><hr>
 
 <details>
-<summary>C - Foto 1:1</summary>
+<summary>Bloque 2 Cuadrado</summary>
 <div>
   <div class="screenshots">
     <div><div class="label">Desktop</div><img src="images/b2_c_foto_cuadrada_desktop.png" alt="Desktop"></div>
@@ -362,14 +350,14 @@
   <h3>En el CMS</h3>
   <div class="caratulas">
     <div><div class="label">Carátula de grupo</div><img src="images/b2_c_foto_cuadrada_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b2_c_foto_cuadrada_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/b2_c_foto_cuadrada_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Bloque 2 Cuadrado'"><div class="label">Carátula elemento 1</div><img src="images/b2_c_foto_cuadrada_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Bloque 2 Cuadrado'"><div class="label">Carátula elemento 2</div><img src="images/b2_c_foto_cuadrada_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
   </div>
 </div>
 </details><hr>
 
 <details>
-<summary>D - Foto/video horizontal</summary>
+<summary>Bloque 2 Horizontal</summary>
 <div>
   <div class="screenshots">
     <div><div class="label">Desktop</div><img src="images/b2_d_foto_horizontal_desktop.png" alt="Desktop"></div>
@@ -379,14 +367,14 @@
   <h3>En el CMS</h3>
   <div class="caratulas">
     <div><div class="label">Carátula de grupo</div><img src="images/b2_d_foto_horizontal_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b2_d_foto_horizontal_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/b2_d_foto_horizontal_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Bloque 2 Horizontal'"><div class="label">Carátula elemento 1</div><img src="images/b2_d_foto_horizontal_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Bloque 2 Horizontal'"><div class="label">Carátula elemento 2</div><img src="images/b2_d_foto_horizontal_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
   </div>
 </div>
 </details><hr>
 
 <details>
-<summary>E - Gran enfoque</summary>
+<summary>Bloque 2 Alta Carga Gráfica</summary>
 <div>
   <p>Reportaje curado y bien formulado que ofrece una mirada propia y diferencial sobre un tema.</p>
   <div class="screenshots">
@@ -397,7 +385,7 @@
   <h3>En el CMS</h3>
   <div class="caratulas">
     <div><div class="label">Carátula de grupo</div><img src="images/b2_e_gran_enfoque_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b2_e_gran_enfoque_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div class="needs-update" data-reason="Caratula: 'Bloque 2 Horizontal'"><div class="label">Carátula elemento 1</div><img src="images/b2_e_gran_enfoque_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
   </div>
 </div>
 </details>
@@ -430,34 +418,14 @@
 <details>
 <summary>Opinión</summary>
 <div>
-  <div class="screenshots">
-    <div><div class="label">Desktop</div><img src="images/b3_opinion_desktop.png" alt="Desktop"></div>
-    <div><div class="label">Tablet</div><img src="images/b3_opinion_tablet.png" alt="Tablet"></div>
-    <div><div class="label">Mobile</div><img src="images/b3_opinion_mobile.png" alt="Mobile"></div>
-  </div>
-  <h3>En el CMS</h3>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b3_opinion_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b3_opinion_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/b3_opinion_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
-  </div>
+  <p>Ver todas las opciones de templates en la <a href="#opinion">sección de Opinión</a>.</p>
 </div>
 </details><hr>
 
 <details>
 <summary>Eventos de gran relevancia</summary>
 <div>
-  <div class="screenshots">
-    <div><div class="label">Desktop</div><img src="images/b3_eventos_desktop.png" alt="Desktop"></div>
-    <div><div class="label">Tablet</div><img src="images/b3_eventos_tablet.png" alt="Tablet"></div>
-    <div><div class="label">Mobile</div><img src="images/b3_eventos_mobile.png" alt="Mobile"></div>
-  </div>
-  <h3>En el CMS</h3>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b3_eventos_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b3_eventos_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/b3_eventos_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
-  </div>
+  <p>Para eventos se utilizan los templates de <a href="#issues">Issues</a>.</p>
 </div>
 </details><hr>
 
@@ -467,8 +435,8 @@
   <p>Inmobiliario, jurídico, defensa.</p>
   <div class="screenshots">
     <div><div class="label">Desktop</div><img src="images/b3_nichos_desktop.png" alt="Desktop"></div>
-    <div><div class="label">Tablet</div><img src="images/b3_nichos_tablet.png" alt="Tablet"></div>
-    <div><div class="label">Mobile</div><img src="images/b3_nichos_mobile.png" alt="Mobile"></div>
+    <div class="needs-update" data-reason="Corregir foto responsive"><div class="label">Tablet</div><img src="images/b3_nichos_tablet.png" alt="Tablet"></div>
+    <div class="needs-update" data-reason="Corregir foto responsive"><div class="label">Mobile</div><img src="images/b3_nichos_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
   <div class="caratulas">
@@ -493,9 +461,8 @@
 <blockquote>La opinión mantiene presencia permanente en portada. Es uno de los contenidos más valorados por los lectores y, por tanto, recibe un tratamiento visual más cuidado: contenido premium exige presentación premium.</blockquote>
 <hr>
 <h2>Combinaciones posibles</h2>
-<p>Lo habitual es que la opinión vaya <strong>agrupada en la apertura</strong> (listado en apertura). Cuando no va en la apertura, se ubica en el <strong>Bloque 3</strong> usando los templates de opinión destacada (1:1 o foto horizontal, según el número de opiniones — el 1:1 admite más piezas). La opinión <strong>no va en el Bloque 2</strong>.</p>
-<p>Las opiniones de segunda categoría se distribuyen como apoyos en los balcones de secciones destacadas (España, Economía, Internacional, etc.).</p>
-<p>Los demás formatos (balcón estándar, superopinión + estándar, superopinión + listado) siguen disponibles pero son menos prioritarios.</p>
+<p>Lo habitual es que la opinión vaya <strong>agrupada en la apertura</strong> (listado en apertura). Cuando no va en la apertura, se ubica en el <strong>Bloque 3</strong> usando los templates de opinión destacada (1:1 o foto horizontal, según el número de opiniones — el 1:1 admite más piezas).</p>
+<p>Las opiniones de segunda categoría se distribuyen como apoyos en los balcones de secciones manuales (España, Economía, Internacional, etc.).</p>
 <hr>
 
 <details open>
@@ -553,9 +520,28 @@
 </details><hr>
 
 <details>
-<summary>Sección destacada con opinión como apoyo</summary>
+<summary>Superopinión + listado</summary>
 <div>
-  <p>Las opiniones de segunda categoría se integran como apoyos dentro de los balcones de secciones destacadas (España, Economía, Internacional, etc.).</p>
+  <p>Una opinión vertebra un issue editorial. Solo se utiliza como <strong>primer issue</strong> de la zona de issues.</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/opinion_superopinion_listado_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/opinion_superopinion_listado_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/opinion_superopinion_listado_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <div class="caratulas">
+    <div><div class="label">Carátula de grupo</div><img src="images/opinion_superopinion_listado_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div><div class="label">Carátula elemento 1</div><img src="images/opinion_superopinion_listado_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div><div class="label">Carátula elemento 2</div><img src="images/opinion_superopinion_listado_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+  <table><tr><th>Ubicación</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>Zona de issues (primer issue)</td><td>3</td><td>5</td></tr></table>
+</div>
+</details><hr>
+
+<details>
+<summary>Sección manual con opinión como apoyo</summary>
+<div>
+  <p>Las opiniones de segunda categoría se integran como apoyos dentro de los balcones de secciones manuales (España, Economía, Internacional, etc.).</p>
   <div class="screenshots">
     <div><div class="label">Desktop</div><img src="images/seccion_destacada_opinion_apoyo_desktop.png" alt="Desktop"></div>
     <div><div class="label">Tablet</div><img src="images/seccion_destacada_opinion_apoyo_tablet.png" alt="Tablet"></div>
@@ -571,6 +557,7 @@
 </div>
 </details><hr>
 
+<!-- OCULTO TEMPORALMENTE: Balcón estándar y Superopinión + estándar - no se usan por ahora
 <details>
 <summary>Balcón estándar</summary>
 <div>
@@ -607,25 +594,7 @@
   <table><tr><th>Ubicación</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>Bloque 2 + Bloque 3</td><td>5 (1 superopinión + 4 estándar 1:1)</td><td>5</td></tr></table>
 </div>
 </details><hr>
-
-<details>
-<summary>Superopinión + listado</summary>
-<div>
-  <p>Una opinión vertebra un issue editorial. Solo se utiliza como <strong>primer issue</strong> de la zona de issues.</p>
-  <div class="screenshots">
-    <div><div class="label">Desktop</div><img src="images/opinion_superopinion_listado_desktop.png" alt="Desktop"></div>
-    <div><div class="label">Tablet</div><img src="images/opinion_superopinion_listado_tablet.png" alt="Tablet"></div>
-    <div><div class="label">Mobile</div><img src="images/opinion_superopinion_listado_mobile.png" alt="Mobile"></div>
-  </div>
-  <h3>En el CMS</h3>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/opinion_superopinion_listado_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/opinion_superopinion_listado_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/opinion_superopinion_listado_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
-  </div>
-  <table><tr><th>Ubicación</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>Zona de issues (primer issue)</td><td>3</td><td>5</td></tr></table>
-</div>
-</details>
+FIN OCULTO TEMPORALMENTE -->
 
 <hr>
 <h2>Acuerdos</h2>
@@ -633,9 +602,7 @@
   <li><strong>Lo habitual es agrupar la opinión en la apertura</strong> (listado en apertura).</li>
   <li>Si no va en la apertura, se ubica en el <strong>Bloque 3</strong> con los templates de opinión destacada (1:1 o foto horizontal).</li>
   <li>El template 1:1 admite más opiniones que el de foto horizontal.</li>
-  <li><strong>La opinión no va en el Bloque 2.</strong></li>
-  <li>Las opiniones de segunda categoría se distribuyen como apoyos en los balcones de secciones destacadas (España, Economía, Internacional, etc.).</li>
-  <li>Los demás formatos (balcón estándar, superopinión + estándar, superopinión + listado) siguen disponibles pero son menos prioritarios.</li>
+  <li>Las opiniones de segunda categoría se distribuyen como apoyos en los balcones de secciones manuales (España, Economía, Internacional, etc.).</li>
   <li>La opinión tiene presencia permanente en portada en alguno de estos formatos.</li>
   <li>Contenido premium exige presentación premium.</li>
 </ul>
@@ -644,11 +611,11 @@
 <!-- ========== B4 ========== -->
 <div class="page" id="b4">
 <h1>B4 - El Corecito</h1>
-<blockquote>Bloque fijo de actualidad hard con carga gráfica reducida. Independiente editorialmente de los Bloques 1 y 2.</blockquote>
+<blockquote>Bloque fijo de actualidad hard con carga gráfica reducida. Temáticamente independiente de los Bloques 1 y 2.</blockquote>
 <hr><h2>Templates</h2>
 
 <details open>
-<summary>Template A - Un solo titulo de grupo</summary>
+<summary>Opción A - Un solo titulo de grupo</summary>
 <div>
   <p><strong>Cuando se usa:</strong> no existen temas agrupables; actualidad variada.</p>
   <div class="screenshots">
@@ -669,7 +636,7 @@
 </details><hr>
 
 <details>
-<summary>Template B - Dos titulos de grupo</summary>
+<summary>Opción B - Dos titulos de grupo</summary>
 <div>
   <p><strong>Cuando se usa:</strong> existen dos temas con desarrollo suficiente para agrupar 3 piezas cada uno.</p>
   <div class="screenshots">
@@ -703,77 +670,7 @@
 <hr><h2>Templates</h2>
 
 <details>
-<summary>Issue estándar</summary>
-<div>
-  <p>1 pieza principal + secundarias opcionales (de 1 a 6 piezas, admite bolillos).</p>
-  <div class="screenshots">
-    <div><div class="label">Desktop</div><img src="images/issue_estandar_desktop.png" alt="Desktop"></div>
-    <div><div class="label">Tablet</div><img src="images/issue_estandar_tablet.png" alt="Tablet"></div>
-    <div><div class="label">Mobile</div><img src="images/issue_estandar_mobile.png" alt="Mobile"></div>
-  </div>
-  <h3>En el CMS</h3>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/issue_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/issue_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/issue_estandar_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
-  </div>
-</div>
-</details><hr>
-
-<details>
-<summary>Issue con navegación</summary>
-<div>
-  <p>Issue con navegación propia (contenido de servicio vinculado al tema: cronología, guia visual, protagonistas...). Opcional.</p>
-  <div class="screenshots">
-    <div><div class="label">Desktop</div><img src="images/issue_con_navegacion_desktop.png" alt="Desktop"></div>
-    <div><div class="label">Tablet</div><img src="images/issue_con_navegacion_tablet.png" alt="Tablet"></div>
-    <div><div class="label">Mobile</div><img src="images/issue_con_navegacion_mobile.png" alt="Mobile"></div>
-  </div>
-  <h3>En el CMS</h3>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/issue_con_navegacion_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/issue_con_navegacion_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/issue_con_navegacion_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
-  </div>
-</div>
-</details><hr>
-
-<details>
-<summary>Branded diamante</summary>
-<div>
-  <p>Comparte template con los issues, diferenciado mediante el logo de cliente en el nombre del grupo.</p>
-  <div class="screenshots">
-    <div><div class="label">Desktop</div><img src="images/issue_branded_diamante_desktop.png" alt="Desktop"></div>
-    <div><div class="label">Tablet</div><img src="images/issue_branded_diamante_tablet.png" alt="Tablet"></div>
-    <div><div class="label">Mobile</div><img src="images/issue_branded_diamante_mobile.png" alt="Mobile"></div>
-  </div>
-  <h3>En el CMS</h3>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/issue_branded_diamante_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/issue_branded_diamante_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/issue_branded_diamante_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
-  </div>
-</div>
-</details><hr>
-
-<details>
-<summary>Alta carga gráfica</summary>
-<div>
-  <div class="screenshots">
-    <div><div class="label">Desktop</div><img src="images/issue_alta_carga_grafica_desktop.png" alt="Desktop"></div>
-    <div><div class="label">Tablet</div><img src="images/issue_alta_carga_grafica_tablet.png" alt="Tablet"></div>
-    <div><div class="label">Mobile</div><img src="images/issue_alta_carga_grafica_mobile.png" alt="Mobile"></div>
-  </div>
-  <h3>En el CMS</h3>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/issue_alta_carga_grafica_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/issue_alta_carga_grafica_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-  </div>
-</div>
-</details><hr>
-
-<details>
-<summary>Foto horizontal</summary>
+<summary>Issue Horizontal</summary>
 <div>
   <div class="screenshots">
     <div><div class="label">Desktop</div><img src="images/issue_foto_horizontal_desktop.png" alt="Desktop"></div>
@@ -783,8 +680,57 @@
   <h3>En el CMS</h3>
   <div class="caratulas">
     <div><div class="label">Carátula de grupo</div><img src="images/issue_foto_horizontal_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/issue_foto_horizontal_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/issue_foto_horizontal_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Issue Horizontal'"><div class="label">Carátula elemento 1</div><img src="images/issue_foto_horizontal_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Issue Horizontal'"><div class="label">Carátula elemento 2</div><img src="images/issue_foto_horizontal_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Issue Cuadrado</summary>
+<div>
+  <p>1 pieza principal + secundarias opcionales (de 1 a 6 piezas, admite bolillos).</p>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/issue_estandar_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/issue_estandar_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/issue_estandar_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <div class="caratulas">
+    <div class="needs-update" data-reason="Grupo 8+4: renombrar a 'Issue Cuadrado'"><div class="label">Carátula de grupo</div><img src="images/issue_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Issue Cuadrado'"><div class="label">Carátula elemento 1</div><img src="images/issue_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Issue Cuadrado'"><div class="label">Carátula elemento 2</div><img src="images/issue_estandar_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Issue Vertical</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><div class="placeholder">Pendiente</div></div>
+    <div><div class="label">Tablet</div><div class="placeholder">Pendiente</div></div>
+    <div><div class="label">Mobile</div><div class="placeholder">Pendiente</div></div>
+  </div>
+  <h3>En el CMS</h3>
+  <div class="caratulas">
+    <div><div class="label">Carátula de grupo</div><div class="placeholder">Pendiente</div></div>
+  </div>
+</div>
+</details><hr>
+
+<details>
+<summary>Issue Destacado</summary>
+<div>
+  <div class="screenshots">
+    <div><div class="label">Desktop</div><img src="images/issue_alta_carga_grafica_desktop.png" alt="Desktop"></div>
+    <div><div class="label">Tablet</div><img src="images/issue_alta_carga_grafica_tablet.png" alt="Tablet"></div>
+    <div><div class="label">Mobile</div><img src="images/issue_alta_carga_grafica_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+  <div class="caratulas">
+    <div><div class="label">Carátula de grupo</div><img src="images/issue_alta_carga_grafica_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div class="needs-update" data-reason="Renombrar a 'Issue Destacado'"><div class="label">Carátula elemento 1</div><img src="images/issue_alta_carga_grafica_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
   </div>
 </div>
 </details>
@@ -794,7 +740,6 @@
 <ul>
   <li>Máximo de 6-7 issues en esta zona.</li>
   <li><strong>Máximo de 3 issues antes de la posición publicitaria.</strong></li>
-  <li>Los primeros issues deberían dedicarse a reportajes.</li>
   <li>Cada issue presenta 1 pieza principal + secundarias opcionales (de 1 a 6 piezas, admite bolillos).</li>
   <li>Todos los templates admiten video, fotografía o gráfico.</li>
   <li>Variedad obligatoria en forma y tipología entre los distintos issues.</li>
@@ -841,7 +786,7 @@
 <details open>
 <summary>Branded oro</summary>
 <div>
-  <p>Posicion branded ubicada encima de SEO croll. Comparte posiciónes con SEO croll. 4 piezas.</p>
+  <p>Posición branded ubicada encima de balcón automático SEO. Comparte posiciones con balcón automático SEO. 3 o 4 piezas.</p>
   <div class="screenshots">
     <div><div class="label">Desktop</div><img src="images/branded_oro_desktop.png" alt="Desktop"></div>
     <div><div class="label">Tablet</div><img src="images/branded_oro_tablet.png" alt="Tablet"></div>
@@ -858,7 +803,7 @@
 <details>
 <summary>Balcón Santander</summary>
 <div>
-  <p>Ubicación: entre Nuestra selección y Secciones secundarias. 4 piezas. Logotipo de Santander en el titulo del balcón.</p>
+  <p>Ubicación: entre Nuestra selección y Secciones automáticas. 4 piezas. Logotipo de Santander en el titulo del balcón.</p>
   <div class="screenshots">
     <div><div class="label">Desktop</div><img src="images/branded_balcon_santander_desktop.png" alt="Desktop"></div>
     <div><div class="label">Tablet</div><img src="images/branded_balcon_santander_tablet.png" alt="Tablet"></div>
@@ -1026,7 +971,7 @@
 
 <!-- ========== SECCIONES DESTACADAS ========== -->
 <div class="page" id="secciones-dest">
-<h1>Secciones destacadas</h1>
+<h1>Secciones manuales</h1>
 <blockquote>Balcónes de gestión manual con orden fijo. Comparten el sistema de templates con los issues, diferenciandose por un titulo de bloque con mayor peso visual.</blockquote>
 <hr>
 
@@ -1041,7 +986,7 @@
 <hr><h2>Casos de uso</h2>
 
 <details>
-<summary>Seccion destacada estándar</summary>
+<summary>Sección manual estándar</summary>
 <div>
   <div class="screenshots">
     <div><div class="label">Desktop</div><img src="images/seccion_destacada_estandar_desktop.png" alt="Desktop"></div>
@@ -1058,7 +1003,7 @@
 </details><hr>
 
 <details>
-<summary>Seccion destacada con subsección</summary>
+<summary>Sección manual con subsección</summary>
 <div>
   <p>Con navegación de subsecciónes.</p>
   <div class="screenshots">
@@ -1094,7 +1039,7 @@
 </details><hr>
 
 <details>
-<summary>Seccion destacada con foto vertical</summary>
+<summary>Sección manual con foto vertical</summary>
 <div>
   <div class="screenshots">
     <div><div class="label">Desktop</div><img src="images/seccion_destacada_foto_vertical_desktop.png" alt="Desktop"></div>
@@ -1113,8 +1058,8 @@
 
 <!-- ========== SECCIONES SECUNDARIAS ========== -->
 <div class="page" id="secciones-sec">
-<h1>Secciones secundarias</h1>
-<blockquote>Balcónes automatizados con template únicoy orden fijo. La automatización permite que la redaccion concentre sus recursos en los espacios que requieren curación manual.</blockquote>
+<h1>Secciones automáticas</h1>
+<blockquote>Balcónes automatizados con template único y orden fijo. La automatización permite que la redaccion concentre sus recursos en los espacios que requieren curación manual.</blockquote>
 <hr>
 
 <table>
@@ -1128,7 +1073,7 @@
 
 <hr><h2>Template</h2>
 <details open>
-<summary>Seccion secundaria</summary>
+<summary>Sección automática</summary>
 <div>
   <div class="screenshots">
     <div><div class="label">Desktop</div><img src="images/seccion_secundaria_desktop.png" alt="Desktop"></div>
@@ -1182,7 +1127,7 @@
   </div>
   <h3>En el CMS</h3>
   <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/tele_caratula_grupo.png" alt="Caratula grupo"></div>
+    <div class="needs-update" data-reason="Cambiar a carátula 12 col normal"><div class="label">Carátula de grupo</div><img src="images/tele_caratula_grupo.png" alt="Caratula grupo"></div>
     <div><div class="label">Carátula elemento 1</div><img src="images/tele_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
   </div>
 </div>
