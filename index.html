@@ -42,7 +42,11 @@
   .screenshots img { width: 100%; border: 1px solid var(--border); border-radius: 4px; background: #fafafa; padding: 8px; }
   .screenshots .label, .caratulas .label { font-size: 12px; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; margin-bottom: 4px; }
 
-  .caratulas { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 12px; margin: 12px 0 16px; align-items: start; }
+  .caratulas { display: grid; grid-template-columns: 1fr 1fr; column-gap: 16px; row-gap: 4px; margin: 12px 0 16px; align-items: start; }
+  .caratulas .car-grupos { display: flex; flex-direction: column; gap: 8px; }
+  .caratulas .car-elementos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; align-items: start; }
+  .caratulas .car-elementos > .label { grid-column: 1 / -1; }
+  .caratulas .car-elementos:empty { display: none; }
   .caratulas img { width: 100%; border: 1px solid var(--border); border-radius: 4px; }
 
   details { margin: 8px 0; }
@@ -199,11 +203,17 @@
     <div><div class="label">Mobile</div><img src="images/b1_template_a_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b1_template_a_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div class="needs-update" data-reason="Renombrar a 'apoyo con foto'"><div class="label">Apoyo con foto</div><img src="images/b1_template_a_caratula_elemento_1.png" alt="Apoyo con foto"></div>
-    <div class="needs-update" data-reason="Renombrar a 'apoyo sin foto'"><div class="label">Apoyo sin foto</div><img src="images/b1_template_a_caratula_elemento_2.png" alt="Apoyo sin foto"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b1_template_a_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b1_template_a_caratula_elemento_1.png" alt="Apoyo con foto"></div>
+      <div><img src="images/b1_template_a_caratula_elemento_2.png" alt="Apoyo sin foto"></div>
+    </div>
   </div>
   <table><tr><th>Apoyos</th><th>Foto</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>No</td><td>Cuadrada (1:1)</td><td>1</td><td>2</td></tr></table>
 </div>
@@ -219,11 +229,17 @@
     <div><div class="label">Mobile</div><img src="images/b1_template_b_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b1_template_b_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b1_template_b_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/b1_template_b_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b1_template_b_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b1_template_b_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/b1_template_b_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    </div>
   </div>
   <table><tr><th>Apoyos</th><th>Foto</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>No</td><td>Vertical (2:3)</td><td>1</td><td>2</td></tr></table>
   <div class="callout callout-yellow"><div class="callout-icon">&#9888;&#65039;</div><div class="callout-content"><strong>Nota de producto.</strong> El formato vertical en movil ocupa un porcentaje elevado de la pantalla y puede reducir el CTR.</div></div>
@@ -240,11 +256,27 @@
     <div><div class="label">Mobile</div><img src="images/b1_template_c_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b1_template_c_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Apertura en Bandera'"><div class="label">Carátula elemento 1</div><img src="images/b1_template_c_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b1_template_c_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b1_template_c_caratula_elemento_1.png" alt="Elemento 1"></div>
+    </div>
+  </div>
+  <h4>Con apoyos</h4>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b1_template_c_apoyos_caratula_grupo.png" alt="Caratula grupo con apoyos"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b1_template_c_apoyos_caratula_elemento_1.png" alt="Elemento 1"></div>
+      <div><img src="images/b1_template_c_apoyos_caratula_elemento_2.png" alt="Elemento 2"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -260,11 +292,17 @@
     <div><div class="label">Mobile</div><img src="images/b1_template_e_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b1_template_e_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Apertura Alta Carga'"><div class="label">Carátula elemento 1</div><img src="images/b1_template_e_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Apertura Alta Carga'"><div class="label">Carátula elemento 2</div><img src="images/b1_template_e_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b1_template_e_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b1_template_e_caratula_elemento_1.png" alt="Elemento 1"></div>
+      <div><img src="images/b1_template_e_caratula_elemento_2.png" alt="Elemento 2"></div>
+      <div><img src="images/b1_template_e_caratula_elemento_3.png" alt="Elemento 3"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -279,10 +317,15 @@
     <div><div class="label">Mobile</div><img src="images/b1_template_d_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b1_template_d_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Apertura Pared a Pared'"><div class="label">Carátula elemento 1</div><img src="images/b1_template_d_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b1_template_d_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b1_template_d_caratula_elemento_1.png" alt="Elemento 1"></div>
+    </div>
   </div>
 </div>
 </details>
@@ -313,10 +356,15 @@
     <div><div class="label">Mobile</div><img src="images/b2_a_vertical_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b2_a_vertical_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Issue Vertical'"><div class="label">Carátula elemento 1</div><img src="images/b2_a_vertical_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b2_a_vertical_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b2_a_vertical_caratula_elemento_1.png" alt="Elemento 1"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -331,13 +379,19 @@
     <div><div class="label">Mobile</div><img src="images/b2_b_switch_core_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b2_b_switch_core_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b2_b_switch_core_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/b2_b_switch_core_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
-    <div><div class="label">Carátula elemento 3</div><img src="images/b2_b_switch_core_caratula_elemento_3.png" alt="Caratula elemento 3"></div>
-    <div><div class="label">Carátula elemento 4</div><img src="images/b2_b_switch_core_caratula_elemento_4.png" alt="Caratula elemento 4"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b2_b_switch_core_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b2_b_switch_core_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/b2_b_switch_core_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+      <div><img src="images/b2_b_switch_core_caratula_elemento_3.png" alt="Caratula elemento 3"></div>
+      <div><img src="images/b2_b_switch_core_caratula_elemento_4.png" alt="Caratula elemento 4"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -351,11 +405,16 @@
     <div><div class="label">Mobile</div><img src="images/b2_c_foto_cuadrada_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b2_c_foto_cuadrada_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Bloque 2 Cuadrado'"><div class="label">Carátula elemento 1</div><img src="images/b2_c_foto_cuadrada_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Bloque 2 Cuadrado'"><div class="label">Carátula elemento 2</div><img src="images/b2_c_foto_cuadrada_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b2_c_foto_cuadrada_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b2_c_foto_cuadrada_caratula_elemento_1.png" alt="Elemento 1"></div>
+      <div><img src="images/b2_c_foto_cuadrada_caratula_elemento_2.png" alt="Elemento 2"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -369,11 +428,16 @@
     <div><div class="label">Mobile</div><img src="images/b2_d_foto_horizontal_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b2_d_foto_horizontal_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Bloque 2 Horizontal'"><div class="label">Carátula elemento 1</div><img src="images/b2_d_foto_horizontal_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Bloque 2 Horizontal'"><div class="label">Carátula elemento 2</div><img src="images/b2_d_foto_horizontal_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b2_d_foto_horizontal_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b2_d_foto_horizontal_caratula_elemento_1.png" alt="Elemento 1"></div>
+      <div><img src="images/b2_d_foto_horizontal_caratula_elemento_2.png" alt="Elemento 2"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -388,10 +452,16 @@
     <div><div class="label">Mobile</div><img src="images/b2_e_gran_enfoque_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b2_e_gran_enfoque_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div class="needs-update" data-reason="Caratula: 'Bloque 2 Horizontal'"><div class="label">Carátula elemento 1</div><img src="images/b2_e_gran_enfoque_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b2_e_gran_enfoque_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b2_e_gran_enfoque_caratula_elemento_1.png" alt="Elemento 1"></div>
+    </div>
   </div>
 </div>
 </details>
@@ -425,6 +495,18 @@
 <summary>Opinión</summary>
 <div>
   <p>Ver todas las opciones de templates en la <a href="#opinion">sección de Opinión</a>.</p>
+  <h3>En el CMS</h3>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b3_opinion_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b3_opinion_caratula_elemento_1.png" alt="Elemento 1"></div>
+      <div><img src="images/b3_opinion_caratula_elemento_2.png" alt="Elemento 2"></div>
+    </div>
+  </div>
 </div>
 </details><hr>
 
@@ -432,6 +514,18 @@
 <summary>Eventos de gran relevancia</summary>
 <div>
   <p>Para eventos se utilizan los templates de <a href="#issues">Issues</a>.</p>
+  <h3>En el CMS</h3>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b3_eventos_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b3_eventos_caratula_elemento_1.png" alt="Elemento 1"></div>
+      <div><img src="images/b3_eventos_caratula_elemento_2.png" alt="Elemento 2"></div>
+    </div>
+  </div>
 </div>
 </details><hr>
 
@@ -445,10 +539,16 @@
     <div class="needs-update" data-reason="Corregir foto responsive"><div class="label">Mobile</div><img src="images/b3_nichos_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/b3_nichos_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/b3_nichos_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/b3_nichos_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/b3_nichos_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    </div>
   </div>
 </div>
 </details>
@@ -482,10 +582,16 @@
     <div><div class="label">Mobile</div><img src="images/opinion_listado_apertura_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/opinion_listado_apertura_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/opinion_listado_apertura_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/opinion_listado_apertura_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/opinion_listado_apertura_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    </div>
   </div>
   <table><tr><th>Ubicación</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>Bloque 1 - columna derecha</td><td>2</td><td>4</td></tr></table>
 </div>
@@ -501,11 +607,17 @@
     <div><div class="label">Mobile</div><img src="images/opinion_destacada_1_1_apoyos_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/opinion_destacada_1_1_apoyos_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/opinion_destacada_1_1_apoyos_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/opinion_destacada_1_1_apoyos_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/opinion_destacada_1_1_apoyos_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/opinion_destacada_1_1_apoyos_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/opinion_destacada_1_1_apoyos_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -520,11 +632,17 @@
     <div><div class="label">Mobile</div><img src="images/opinion_destacada_foto_horizontal_apoyos_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/opinion_destacada_foto_horizontal_apoyos_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/opinion_destacada_foto_horizontal_apoyos_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/opinion_destacada_foto_horizontal_apoyos_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/opinion_destacada_foto_horizontal_apoyos_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/opinion_destacada_foto_horizontal_apoyos_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/opinion_destacada_foto_horizontal_apoyos_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -539,11 +657,17 @@
     <div><div class="label">Mobile</div><img src="images/opinion_superopinion_listado_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/opinion_superopinion_listado_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/opinion_superopinion_listado_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/opinion_superopinion_listado_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/opinion_superopinion_listado_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/opinion_superopinion_listado_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/opinion_superopinion_listado_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    </div>
   </div>
   <table><tr><th>Ubicación</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>Zona de issues (primer issue)</td><td>3</td><td>5</td></tr></table>
 </div>
@@ -559,12 +683,18 @@
     <div><div class="label">Mobile</div><img src="images/seccion_destacada_opinion_apoyo_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/seccion_destacada_opinion_apoyo_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/seccion_destacada_opinion_apoyo_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/seccion_destacada_opinion_apoyo_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
-    <div><div class="label">Carátula elemento 3</div><img src="images/seccion_destacada_opinion_apoyo_caratula_elemento_3.png" alt="Caratula elemento 3"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/seccion_destacada_opinion_apoyo_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/seccion_destacada_opinion_apoyo_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/seccion_destacada_opinion_apoyo_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+      <div><img src="images/seccion_destacada_opinion_apoyo_caratula_elemento_3.png" alt="Caratula elemento 3"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -580,10 +710,16 @@
     <div><div class="label">Mobile</div><img src="images/opinion_balcon_estandar_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/opinion_balcon_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/opinion_balcon_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/opinion_balcon_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/opinion_balcon_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    </div>
   </div>
   <table><tr><th>Ubicación</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>Bloque 3</td><td>3</td><td>4</td></tr></table>
 </div>
@@ -599,11 +735,17 @@
     <div><div class="label">Mobile</div><img src="images/opinion_superopinion_estandar_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/opinion_superopinion_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/opinion_superopinion_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/opinion_superopinion_estandar_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/opinion_superopinion_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/opinion_superopinion_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/opinion_superopinion_estandar_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    </div>
   </div>
   <table><tr><th>Ubicación</th><th>Piezas min.</th><th>Piezas max.</th></tr><tr><td>Bloque 2 + Bloque 3</td><td>5 (1 superopinión + 4 estándar 1:1)</td><td>5</td></tr></table>
 </div>
@@ -638,13 +780,19 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/corecito_template_a_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/corecito_template_a_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/corecito_template_a_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/corecito_template_a_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
-    <div><div class="label">Carátula elemento 3</div><img src="images/corecito_template_a_caratula_elemento_3.png" alt="Caratula elemento 3"></div>
-    <div><div class="label">Carátula elemento 4</div><img src="images/corecito_template_a_caratula_elemento_4.png" alt="Caratula elemento 4"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/corecito_template_a_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/corecito_template_a_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/corecito_template_a_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+      <div><img src="images/corecito_template_a_caratula_elemento_3.png" alt="Caratula elemento 3"></div>
+      <div><img src="images/corecito_template_a_caratula_elemento_4.png" alt="Caratula elemento 4"></div>
+    </div>
   </div>
   <table><tr><th>Estructura</th><th>Temas agrupables</th></tr><tr><td>6 temas sueltos e independientes</td><td>No</td></tr></table>
 </div>
@@ -693,11 +841,16 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/issue_foto_horizontal_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/issue_foto_horizontal_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Issue Horizontal'"><div class="label">Carátula elemento 1</div><img src="images/issue_foto_horizontal_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Issue Horizontal'"><div class="label">Carátula elemento 2</div><img src="images/issue_foto_horizontal_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/issue_foto_horizontal_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/issue_foto_horizontal_caratula_elemento_1.png" alt="Elemento 1"></div>
+      <div><img src="images/issue_foto_horizontal_caratula_elemento_2.png" alt="Elemento 2"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -712,11 +865,17 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/issue_estandar_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div class="needs-update" data-reason="Grupo 8+4: renombrar a 'Issue Cuadrado'"><div class="label">Carátula de grupo</div><img src="images/issue_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Issue Cuadrado'"><div class="label">Carátula elemento 1</div><img src="images/issue_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Issue Cuadrado'"><div class="label">Carátula elemento 2</div><img src="images/issue_estandar_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/issue_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/issue_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/issue_estandar_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -730,11 +889,17 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/issue_vertical_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/issue_vertical_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/issue_vertical_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/issue_vertical_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/issue_vertical_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/issue_vertical_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/issue_vertical_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -748,10 +913,15 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/issue_alta_carga_grafica_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/issue_alta_carga_grafica_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div class="needs-update" data-reason="Renombrar a 'Issue Destacado'"><div class="label">Carátula elemento 1</div><img src="images/issue_alta_carga_grafica_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/issue_alta_carga_grafica_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/issue_alta_carga_grafica_caratula_elemento_1.png" alt="Elemento 1"></div>
+    </div>
   </div>
 </div>
 </details>
@@ -791,9 +961,14 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/lo_mejor_ec_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/lo_mejor_ec_caratula_grupo.png" alt="Caratula grupo"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/lo_mejor_ec_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos"></div>
   </div>
 </div>
 </details>
@@ -814,10 +989,16 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/carrusel_video_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/carrusel_video_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/carrusel_video_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/carrusel_video_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/carrusel_video_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    </div>
   </div>
 </div>
 </details>
@@ -837,10 +1018,16 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/lo_mas_viral_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/lo_mas_viral_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/lo_mas_viral_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/lo_mas_viral_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/lo_mas_viral_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    </div>
   </div>
 </div>
 </details>
@@ -862,10 +1049,16 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/branded_oro_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/branded_oro_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/branded_oro_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/branded_oro_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/branded_oro_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -880,10 +1073,16 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/branded_balcon_santander_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/branded_balcon_santander_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/branded_balcon_santander_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/branded_balcon_santander_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/branded_balcon_santander_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -897,10 +1096,16 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/branded_lo_mas_viral_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/branded_lo_mas_viral_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/branded_lo_mas_viral_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/branded_lo_mas_viral_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/branded_lo_mas_viral_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -915,11 +1120,17 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/branded_diamante_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/branded_diamante_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/branded_diamante_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/branded_diamante_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/branded_diamante_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/branded_diamante_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/branded_diamante_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    </div>
   </div>
 </div>
 </details>
@@ -950,11 +1161,17 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/seccion_destacada_estandar_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/seccion_destacada_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/seccion_destacada_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/seccion_destacada_estandar_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/seccion_destacada_estandar_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/seccion_destacada_estandar_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/seccion_destacada_estandar_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -969,11 +1186,19 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/seccion_destacada_con_subseccion_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/seccion_destacada_con_subseccion_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/seccion_destacada_con_subseccion_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/seccion_destacada_con_subseccion_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/seccion_destacada_con_subseccion_caratula_grupo.png" alt="Caratula grupo"></div>
+      <div><img src="images/seccion_destacada_con_subseccion_caratula_grupo_2.png" alt="Caratula grupo 2"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/seccion_destacada_con_subseccion_caratula_elemento_1.png" alt="Elemento 1"></div>
+      <div><img src="images/seccion_destacada_con_subseccion_caratula_elemento_2.png" alt="Elemento 2"></div>
+      <div><img src="images/seccion_destacada_con_subseccion_caratula_elemento_3.png" alt="Elemento 3"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -988,11 +1213,17 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/seccion_destacada_economia_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/seccion_destacada_economia_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/seccion_destacada_economia_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/seccion_destacada_economia_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/seccion_destacada_economia_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/seccion_destacada_economia_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/seccion_destacada_economia_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    </div>
   </div>
 </div>
 </details><hr>
@@ -1006,11 +1237,17 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/seccion_destacada_foto_vertical_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/seccion_destacada_foto_vertical_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/seccion_destacada_foto_vertical_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/seccion_destacada_foto_vertical_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/seccion_destacada_foto_vertical_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/seccion_destacada_foto_vertical_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/seccion_destacada_foto_vertical_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    </div>
   </div>
 </div>
 </details>
@@ -1031,13 +1268,19 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/nuestra_seleccion_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/nuestra_seleccion_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula de grupo 2</div><img src="images/nuestra_seleccion_caratula_grupo_2.png" alt="Caratula grupo 2"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/nuestra_seleccion_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/nuestra_seleccion_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
-    <div><div class="label">Carátula elemento 3</div><img src="images/nuestra_seleccion_caratula_elemento_3.png" alt="Caratula elemento 3"></div>
+
+      <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/nuestra_seleccion_caratula_grupo.png" alt="Caratula grupo"></div>
+      <div><img src="images/nuestra_seleccion_caratula_grupo_2.png" alt="Caratula grupo 2"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/nuestra_seleccion_caratula_elemento_1.png" alt="Elemento 1"></div>
+      <div><img src="images/nuestra_seleccion_caratula_elemento_2.png" alt="Elemento 2"></div>
+      <div><img src="images/nuestra_seleccion_caratula_elemento_3.png" alt="Elemento 3"></div>
+    </div>
   </div>
 </div>
 </details>
@@ -1058,12 +1301,18 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/balcon_suscriptor_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/balcon_suscriptor_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula de grupo 2</div><img src="images/balcon_suscriptor_caratula_grupo_2.png" alt="Caratula grupo 2"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/balcon_suscriptor_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/balcon_suscriptor_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+      <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/balcon_suscriptor_caratula_grupo.png" alt="Caratula grupo"></div>
+      <div><img src="images/balcon_suscriptor_caratula_grupo_2.png" alt="Caratula grupo 2"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/balcon_suscriptor_caratula_elemento_1.png" alt="Elemento 1"></div>
+      <div><img src="images/balcon_suscriptor_caratula_elemento_2.png" alt="Elemento 2"></div>
+    </div>
   </div>
 </div>
 </details>
@@ -1094,9 +1343,14 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/seccion_secundaria_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/seccion_secundaria_caratula_grupo.png" alt="Caratula grupo"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/seccion_secundaria_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos"></div>
   </div>
 </div>
 </details>
@@ -1116,9 +1370,14 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/favoritos_suscriptor_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/favoritos_suscriptor_caratula_grupo.png" alt="Caratula grupo"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/favoritos_suscriptor_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos"></div>
   </div>
 </div>
 </details>
@@ -1138,12 +1397,18 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/vanitatis_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/vanitatis_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/vanitatis_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/vanitatis_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
-    <div><div class="label">Carátula elemento 3</div><img src="images/vanitatis_caratula_elemento_3.png" alt="Caratula elemento 3"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/vanitatis_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/vanitatis_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/vanitatis_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+      <div><img src="images/vanitatis_caratula_elemento_3.png" alt="Caratula elemento 3"></div>
+    </div>
   </div>
 </div>
 </details>
@@ -1163,10 +1428,16 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/tele_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div class="needs-update" data-reason="Cambiar a carátula 12 col normal"><div class="label">Carátula de grupo</div><img src="images/tele_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/tele_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/tele_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/tele_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+    </div>
   </div>
 </div>
 </details>
@@ -1194,11 +1465,17 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Mobile</div><img src="images/de_compras_mobile.png" alt="Mobile"></div>
   </div>
   <h3>En el CMS</h3>
-  <p style="font-size:13px; color:#787774; margin-bottom:8px;">Las imágenes de Grupo Carátula y Grupo Elemento se actualizarán próximamente para coincidir con los nombres mostrados en esta guía.</p>
-  <div class="caratulas">
-    <div><div class="label">Carátula de grupo</div><img src="images/de_compras_caratula_grupo.png" alt="Caratula grupo"></div>
-    <div><div class="label">Carátula elemento 1</div><img src="images/de_compras_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
-    <div><div class="label">Carátula elemento 2</div><img src="images/de_compras_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/de_compras_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+      <div><img src="images/de_compras_caratula_elemento_1.png" alt="Caratula elemento 1"></div>
+      <div><img src="images/de_compras_caratula_elemento_2.png" alt="Caratula elemento 2"></div>
+    </div>
   </div>
 </div>
 </details>
@@ -1241,6 +1518,15 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Tablet</div><img src="images/grupo_12col_tablet.png" alt="Tablet"></div>
     <div><div class="label">Mobile</div><img src="images/grupo_12col_mobile.png" alt="Mobile"></div>
   </div>
+  <h3>En el CMS</h3>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/grupo_12col_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos"></div>
+  </div>
 </div>
 </details><hr>
 
@@ -1260,6 +1546,15 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Desktop</div><img src="images/grupo_8col_desktop.png" alt="Desktop"></div>
     <div><div class="label">Tablet</div><img src="images/grupo_8col_tablet.png" alt="Tablet"></div>
     <div><div class="label">Mobile</div><img src="images/grupo_8col_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/grupo_8col_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos"></div>
   </div>
 </div>
 </details><hr>
@@ -1281,6 +1576,16 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Tablet</div><img src="images/grupo_4col_tablet.png" alt="Tablet"></div>
     <div><div class="label">Mobile</div><img src="images/grupo_4col_mobile.png" alt="Mobile"></div>
   </div>
+  <h3>En el CMS</h3>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/grupo_4col_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+    </div>
+  </div>
 </div>
 </details><hr>
 
@@ -1295,6 +1600,16 @@ FIN OCULTO TEMPORALMENTE -->
     <tr><td><strong>Tablet</strong></td><td>Los elementos de la parte de 4 columnas pierden foto y entradilla.</td></tr>
     <tr><td><strong>Mobile</strong></td><td>Todo lo que va después del primer elemento en la parte de 4 columnas pierde foto y entradilla.</td></tr>
   </table>
+  <h3>En el CMS</h3>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/grupo_issue_12col_caratula.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos">
+    </div>
+  </div>
   <h3>Ejemplo</h3>
   <div class="screenshots">
     <div><div class="label">Desktop</div><img src="images/grupo_issue_8_4_desktop.png" alt="Desktop"></div>
@@ -1314,6 +1629,15 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Tablet</div><img src="images/grupo_carrousel_12col_tablet.png" alt="Tablet"></div>
     <div><div class="label">Mobile</div><img src="images/grupo_carrousel_12col_mobile.png" alt="Mobile"></div>
   </div>
+  <h3>En el CMS</h3>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/grupo_carrousel_12col_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos"></div>
+  </div>
 </div>
 </details><hr>
 
@@ -1329,6 +1653,15 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Tablet</div><img src="images/grupo_12col_foto_branded_tablet.png" alt="Tablet"></div>
     <div><div class="label">Mobile</div><img src="images/grupo_12col_foto_branded_mobile.png" alt="Mobile"></div>
   </div>
+  <h3>En el CMS</h3>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/grupo_12col_foto_branded_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos"></div>
+  </div>
 </div>
 </details><hr>
 
@@ -1341,6 +1674,15 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Desktop</div><img src="images/grupo_core_desktop.png" alt="Desktop"></div>
     <div><div class="label">Tablet</div><img src="images/grupo_core_tablet.png" alt="Tablet"></div>
     <div><div class="label">Mobile</div><img src="images/grupo_core_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/grupo_core_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos"></div>
   </div>
 </div>
 </details><hr>
@@ -1356,6 +1698,15 @@ FIN OCULTO TEMPORALMENTE -->
     <div><div class="label">Desktop</div><img src="images/grupo_5_3_desktop.png" alt="Desktop"></div>
     <div><div class="label">Tablet</div><img src="images/grupo_5_3_tablet.png" alt="Tablet"></div>
     <div><div class="label">Mobile</div><img src="images/grupo_5_3_mobile.png" alt="Mobile"></div>
+  </div>
+  <h3>En el CMS</h3>
+        <div class="caratulas">
+      <div class="label">Grupo</div>
+      <div class="label">Elementos</div>
+    <div class="car-grupos">
+      <div><img src="images/grupo_5_3_caratula_grupo.png" alt="Caratula grupo"></div>
+    </div>
+    <div class="car-elementos"></div>
   </div>
 </div>
 </details>
